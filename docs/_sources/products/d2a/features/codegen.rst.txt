@@ -43,7 +43,7 @@ All options are optional.
 
 :`--template-path`:
 
-  `d2a` provides customize template to make it versatile.
+  To make it versatile, `d2a` allows the developer to customize template.
   Specify the relative file path from `settings.TEMPLATES`
 
   Current original template is `here <https://github.com/walkframe/d2a/blob/master/project_postgresql/original_template.tmpl>`__
