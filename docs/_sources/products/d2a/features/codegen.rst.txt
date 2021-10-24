@@ -3,9 +3,12 @@ Code generation
 
 Back to `doc index </products/d2a/>`__
 
-`d2a` makes a sqlalchemy models file from all django models.
+Manually defining SQLAlchemy in the same way as Django models is bothersome,
+and the definitions may diverge when changes occur.
 
-Use django command `sqla_codegen`. It will be available after the installation.
+`d2a` makes a sqlalchemy models file from all django models on your behalf.
+
+Just use django command `sqla_codegen`. It will be available after the installation.
 
 .. code-block:: shell
 
@@ -50,7 +53,7 @@ All options are optional.
 
   Example:
 
-    You can get also schemas from `Table` suffix, when you use the template as follows:
+    You can get also schemas from `Table` suffix like the following:
   
     .. code-block:: python
 
@@ -116,6 +119,10 @@ All options are optional.
       {{ model.model_name }}Table = {{ model.model_name }}.__table__
       {% endfor %}
       {{ blocks.after_models }}
+
+    ..warning::
+
+      Deleting `CIText` and `GET_DEFAULT` is prohibited.
 
 
 :`--db-type`:

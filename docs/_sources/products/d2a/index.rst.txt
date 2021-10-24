@@ -13,6 +13,10 @@ D2A
   <a href="https://pypi.org/project/d2a/"><img src="https://img.shields.io/pypi/dm/d2a.svg" /></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" /></a>
   
+d2a provides some utilities for SQLAlchemy with Django.
+
+If you want to use SQLAlchemy instead of Django's QuerySet, this must suit you.
+
 Requirements
 ---------------
 - Python: 3.5 or later.
