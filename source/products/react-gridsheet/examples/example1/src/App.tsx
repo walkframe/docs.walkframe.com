@@ -1,5 +1,5 @@
 import * as React from "react";
-import { GridSheet } from "react-gridsheet";
+import { GridSheet, matrixIntoCells, ThousandSeparatorRenderer } from "react-gridsheet";
 import "./App.css";
 
 export default function App() {
@@ -1209,41 +1209,47 @@ export default function App() {
     <div className="App">
       <h1>Hello React-GridSheet</h1>
       <GridSheet
-        data={data}
+        initial={matrixIntoCells(data, {
+          A: { label: "Geographic Area Name", width: 200 },
+          B: { label: "2017 NAICS code" },
+          C: { label: "Meaning of NAICS code", width: 200 },
+          D: {
+            label: "Meaning of Legal from of organization code",
+            width: 300
+          },
+          E: {
+            label: "Meaning of Employment size of establishements",
+            width: 200
+          },
+          F: { label: "Year", width: 50 },
+          G: {
+            label: "Number of establishments",
+            style: { textAlign: "right" },
+            renderer: "comma",
+          },
+          H: {
+            label: "Annual payroll ($1,000)",
+            width: 150,
+            style: { textAlign: "right" },
+            renderer: "comma",
+          },
+          I: {
+            label: "First-quarter payroll ($1,000)",
+            width: 150,
+            style: { textAlign: "right" },
+            renderer: "comma",
+          },
+          J: {
+            label: "Number of employees",
+            width: 150,
+            style: { textAlign: "right" },
+            renderer: "comma",
+          }
+        })}
         options={{
           headerHeight: 30,
-          cells: {
-            A: { label: "Geographic Area Name", width: 200 },
-            B: { label: "2017 NAICS code" },
-            C: { label: "Meaning of NAICS code", width: 200 },
-            D: {
-              label: "Meaning of Legal from of organization code",
-              width: 300
-            },
-            E: {
-              label: "Meaning of Employment size of establishements",
-              width: 200
-            },
-            F: { label: "Year", width: 50 },
-            G: {
-              label: "Number of establishments",
-              style: { textAlign: "right" }
-            },
-            H: {
-              label: "Annual payroll ($1,000)",
-              width: 150,
-              style: { textAlign: "right" }
-            },
-            I: {
-              label: "First-quarter payroll ($1,000)",
-              width: 150,
-              style: { textAlign: "right" }
-            },
-            J: {
-              label: "Number of employees",
-              width: 150,
-              style: { textAlign: "right" }
-            }
+          renderers: {
+            comma: new ThousandSeparatorRenderer(),
           }
         }}
       />
@@ -1251,6 +1257,7 @@ export default function App() {
       <a
         target="_blank"
         href="https://data.census.gov/cedsci/table?d=ANN%20Business%20Patterns%20County%20Business%20Patterns&tid=CBP2018.CB1800CBP&hidePreview=true"
+        rel="noreferrer"
       >
         All Sectors: County Business Patterns by Legal Form of Organization and
         Employment Size Class for U.S., States, and Selected Geographies: 2018

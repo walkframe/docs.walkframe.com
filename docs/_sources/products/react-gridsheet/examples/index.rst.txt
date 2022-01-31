@@ -58,7 +58,7 @@ Example2 - Custom renderers with dark mode
 
 - Custom renderer:
 
-  - IdRenderer: renders a number without comma.
+  - ThousandSeparatorRenderer: renders a number with comma. (built-in)
   - ImageRenderer: renders an image related to the string as a link.
   - LinkRenderer: renders a string as a link.
 

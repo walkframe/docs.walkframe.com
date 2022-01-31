@@ -148,19 +148,54 @@
 </div>
 <div class="section" id="how-to-use">
 <h2>How to use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h2>
+<p>Simple example.</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">"react"</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">GridSheet</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"react-gridsheet"</span><span class="p">;</span>
 
 <span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">GridSheet</span>
-      <span class="na">data</span><span class="o">=</span><span class="p">{[</span> <span class="c1">// Required: any[][]</span>
-         <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">],</span>
-         <span class="p">[</span><span class="s2">"b"</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="kc">false</span><span class="p">],</span>
-         <span class="p">[</span><span class="s2">"c"</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="kc">null</span><span class="p">],</span>
-      <span class="p">]}</span>
+      <span class="na">initial</span><span class="o">=</span><span class="p">{{</span>
+        <span class="k">default</span><span class="o">:</span> <span class="p">{</span><span class="nx">style</span><span class="o">:</span> <span class="p">{</span> <span class="nx">fontStyle</span><span class="o">:</span> <span class="s2">"italic"</span> <span class="p">}},</span>
+        <span class="nx">A</span><span class="o">:</span> <span class="p">{</span><span class="nx">style</span><span class="o">:</span> <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s2">"#ddf"</span><span class="p">,</span> <span class="nx">width</span><span class="o">:</span> <span class="mf">300</span><span class="p">},</span>
+        <span class="mf">3</span><span class="o">:</span> <span class="p">{</span><span class="nx">height</span><span class="o">:</span> <span class="mf">100</span><span class="p">},</span>
+        <span class="nx">A1</span><span class="o">:</span> <span class="p">{</span><span class="nx">value</span><span class="o">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="nx">style</span><span class="o">:</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s2">"#00f"</span><span class="p">}},</span>
+        <span class="nx">B1</span><span class="o">:</span> <span class="p">{</span><span class="nx">value</span><span class="o">:</span> <span class="mf">1</span><span class="p">},</span>
+        <span class="nx">C1</span><span class="o">:</span> <span class="p">{</span><span class="nx">value</span><span class="o">:</span> <span class="kc">true</span><span class="p">},</span>
+        <span class="nx">A2</span><span class="o">:</span> <span class="p">{</span><span class="nx">value</span><span class="o">:</span> <span class="s2">"b"</span><span class="p">},</span>
+        <span class="nx">B2</span><span class="o">:</span> <span class="p">{</span><span class="nx">value</span><span class="o">:</span> <span class="mf">2</span><span class="p">},</span>
+        <span class="nx">C2</span><span class="o">:</span> <span class="p">{</span><span class="nx">value</span><span class="o">:</span> <span class="kc">false</span><span class="p">},</span>
+        <span class="nx">B1</span><span class="o">:</span> <span class="p">{</span><span class="nx">value</span><span class="o">:</span> <span class="mf">3</span><span class="p">},</span>
+      <span class="p">}}</span>
       <span class="na">options</span><span class="o">=</span><span class="p">{{</span> <span class="c1">// Optional</span>
-        <span class="c1">// all options are optional</span>
+      <span class="p">}}</span>
+      <span class="na">className</span><span class="o">=</span><span class="s">"some-class"</span>
+      <span class="na">style</span><span class="o">=</span><span class="p">{{</span> <span class="nx">maxWidth</span><span class="o">:</span> <span class="s2">"100%"</span> <span class="p">}}</span>
+    <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Another example using matrix.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">"react"</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">GridSheet</span><span class="p">,</span> <span class="nx">matrixIntoCells</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"react-gridsheet"</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">GridSheet</span>
+      <span class="na">initial</span><span class="o">=</span><span class="p">{</span><span class="nx">matrixIntoCells</span><span class="p">([</span>
+        <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">"b"</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="kc">false</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">"c"</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">null</span><span class="p">],</span>
+      <span class="p">],</span> <span class="p">{</span>
+        <span class="nx">A1</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">style</span><span class="o">:</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s2">"#50f"</span><span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nx">B3</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">value</span><span class="o">:</span> <span class="mf">33</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">})}</span>
+      <span class="na">options</span><span class="o">=</span><span class="p">{{</span> <span class="c1">// Optional</span>
       <span class="p">}}</span>
       <span class="na">className</span><span class="o">=</span><span class="s">"some-class"</span>
       <span class="na">style</span><span class="o">=</span><span class="p">{{</span> <span class="nx">maxWidth</span><span class="o">:</span> <span class="s2">"100%"</span> <span class="p">}}</span>
@@ -174,11 +209,10 @@
 <p>More examples are <a class="reference external" href="/products/react-gridsheet/examples">here</a>.</p>
 </div>
 </div>
-<div class="section" id="options-prop">
-<h2>options prop<a class="headerlink" href="#options-prop" title="Permalink to this headline">¶</a></h2>
-<dl class="field-list">
-<dt class="field-odd">options.cells</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">options.cells</span></code> affects the cells matching the keys.</p>
+<div class="section" id="initial-prop">
+<h2>initial prop<a class="headerlink" href="#initial-prop" title="Permalink to this headline">¶</a></h2>
+<p>This prop affects the cells matching the keys.</p>
+<p>Key rules:</p>
 <ul class="simple">
 <li><p><cite>default</cite> (lowercase) field matches all rows, columns and cells.</p>
 <ul>
@@ -206,97 +240,99 @@
 </ul>
 </li>
 </ul>
+<p>Value of the cell is an object having following keys.</p>
 <dl class="field-list simple">
-<dt class="field-odd">label</dt>
-<dd class="field-odd"><p>Header’s label instead of Column ID. Only row and column configs work.</p>
+<dt class="field-odd">value</dt>
+<dd class="field-odd"><p>cell value.</p>
 </dd>
-<dt class="field-even">width</dt>
-<dd class="field-even"><p>Horizontal header’s width. (px)</p>
+<dt class="field-even">label</dt>
+<dd class="field-even"><p>Header’s label instead of Column ID. Only row and column configs work.</p>
 </dd>
-<dt class="field-odd">height</dt>
-<dd class="field-odd"><p>Vertical header’s height. (px)</p>
+<dt class="field-odd">width</dt>
+<dd class="field-odd"><p>Horizontal header’s width. (px)</p>
 </dd>
-<dt class="field-even">style</dt>
-<dd class="field-even"><p>Cell style object. (React.CSSProperties)</p>
+<dt class="field-even">height</dt>
+<dd class="field-even"><p>Vertical header’s height. (px)</p>
 </dd>
-<dt class="field-odd">verticalAlign</dt>
-<dd class="field-odd"><p>This field equals css <cite>vertical-align</cite> property.</p>
+<dt class="field-odd">style</dt>
+<dd class="field-odd"><p>Cell style object. (React.CSSProperties)</p>
 </dd>
-<dt class="field-even">render</dt>
-<dd class="field-even"><p>Renderer identity. (string)</p>
+<dt class="field-even">verticalAlign</dt>
+<dd class="field-even"><p>This field equals css <cite>vertical-align</cite> property.</p>
 </dd>
-<dt class="field-odd">parser</dt>
-<dd class="field-odd"><p>Parser identity. (string)</p>
+<dt class="field-odd">render</dt>
+<dd class="field-odd"><p>Renderer identity. (string)</p>
+</dd>
+<dt class="field-even">parser</dt>
+<dd class="field-even"><p>Parser identity. (string)</p>
 </dd>
 </dl>
-<p>Example:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">cells</span><span class="o">:</span> <span class="p">{</span>
-  <span class="k">default</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">width</span><span class="o">:</span> <span class="mf">100</span><span class="p">,</span> <span class="c1">// px</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="mf">25</span><span class="p">,</span> <span class="c1">// px</span>
-  <span class="p">},</span>
-  <span class="nx">A</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">style</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">borderBottom</span><span class="o">:</span> <span class="s2">"double 2px #ff0000"</span><span class="p">,</span>
-    <span class="p">},</span>
-  <span class="p">},</span>
-  <span class="mf">1</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="mf">50</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">}</span>
-</pre></div>
 </div>
-</dd>
-<dt class="field-even">options.sheetHeight</dt>
-<dd class="field-even"><ul class="simple">
+<div class="section" id="difference-prop">
+<h2>difference prop<a class="headerlink" href="#difference-prop" title="Permalink to this headline">¶</a></h2>
+<p>This prop changes the data after initialized.
+Note that this change will remain in the history.</p>
+<p>Prop type is the same with <cite>initial</cite> prop.</p>
+</div>
+<div class="section" id="options-prop">
+<h2>options prop<a class="headerlink" href="#options-prop" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">options.cells</span></code> was deleted. (=&gt; 0.6.x).</p></li>
+</ul>
+</div>
+<dl class="field-list">
+<dt class="field-odd">options.sheetHeight</dt>
+<dd class="field-odd"><ul class="simple">
 <li><p>Sheet width size.</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">500</span></code></p></li>
 </ul>
 </dd>
-<dt class="field-odd">options.sheetWidth</dt>
-<dd class="field-odd"><ul class="simple">
+<dt class="field-even">options.sheetWidth</dt>
+<dd class="field-even"><ul class="simple">
 <li><p>History (undo, redo) size.</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">1000</span></code></p></li>
 </ul>
 </dd>
-<dt class="field-even">options.historySize</dt>
-<dd class="field-even"><ul class="simple">
+<dt class="field-odd">options.historySize</dt>
+<dd class="field-odd"><ul class="simple">
 <li><p>History (undo, redo) size.</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
 </ul>
 </dd>
-<dt class="field-odd">options.headerHeight</dt>
-<dd class="field-odd"><ul class="simple">
+<dt class="field-even">options.headerHeight</dt>
+<dd class="field-even"><ul class="simple">
 <li><p>Horizontal header height. (number)</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">20</span></code></p></li>
 </ul>
 </dd>
-<dt class="field-even">options.headerWidth</dt>
-<dd class="field-even"><ul class="simple">
+<dt class="field-odd">options.headerWidth</dt>
+<dd class="field-odd"><ul class="simple">
 <li><p>Vertical header width. (number)</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">50</span></code></p></li>
 </ul>
 </dd>
-<dt class="field-odd">options.editingOnEnter</dt>
-<dd class="field-odd"><ul class="simple">
+<dt class="field-even">options.editingOnEnter</dt>
+<dd class="field-even"><ul class="simple">
 <li><p>Whether <cite>ENTER</cite> key gets down and set the cell editing.</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">true</span></code></p></li>
 </ul>
 </dd>
-<dt class="field-even">options.cellLabel</dt>
-<dd class="field-even"><ul class="simple">
+<dt class="field-odd">options.cellLabel</dt>
+<dd class="field-odd"><ul class="simple">
 <li><p>Whether cell labels (navigator) show.</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">true</span></code></p></li>
 </ul>
 </dd>
-<dt class="field-odd">options.mode</dt>
-<dd class="field-odd"><ul class="simple">
+<dt class="field-even">options.mode</dt>
+<dd class="field-even"><ul class="simple">
 <li><p>color mode. It allows <code class="docutils literal notranslate"><span class="pre">"light"</span></code> or <code class="docutils literal notranslate"><span class="pre">"dark"</span></code>.</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">"light"</span></code></p></li>
 </ul>
 </dd>
-<dt class="field-even">options.renderers</dt>
-<dd class="field-even"><ul class="simple">
+<dt class="field-odd">options.renderers</dt>
+<dd class="field-odd"><ul class="simple">
 <li><p>You can create a custom Renderer inheriting <code class="docutils literal notranslate"><span class="pre">Renderer</span></code> class.</p>
 <ul>
 <li><p>It has to be registered here. The key identifies the renderer.</p></li>
@@ -325,11 +361,11 @@
 <span class="p">}</span> <span class="nx">from</span> <span class="s2">"react-gridsheet"</span><span class="p">;</span>
 
 <span class="kr">class</span> <span class="nx">QuoteRenderer</span> <span class="kr">extends</span> <span class="nx">Renderer</span> <span class="p">{</span>
-  <span class="nx">string</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="sb">`"</span><span class="si">${</span><span class="nx">value</span><span class="si">}</span><span class="sb">"`</span><span class="p">;</span>
+  <span class="nx">string</span><span class="p">(</span><span class="nx">cell</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="sb">`"</span><span class="si">${</span><span class="nx">cell</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">"`</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="nx">stringify</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s2">""</span> <span class="o">+</span> <span class="nx">value</span><span class="p">;</span>
+  <span class="nx">stringify</span><span class="p">(</span><span class="nx">cell</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">""</span> <span class="o">+</span> <span class="nx">cell</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -353,8 +389,8 @@
 </pre></div>
 </div>
 </dd>
-<dt class="field-odd">options.parsers</dt>
-<dd class="field-odd"><ul class="simple">
+<dt class="field-even">options.parsers</dt>
+<dd class="field-even"><ul class="simple">
 <li><p>You can create a custom Parser inheriting <code class="docutils literal notranslate"><span class="pre">Parser</span></code> class.</p>
 <ul>
 <li><p>It has to be registered here. The key identifies the parser.</p></li>
@@ -366,7 +402,7 @@
 <li><p>previous value is passed to second argument.</p></li>
 </ul>
 </li>
-<li><p>parse: parses inputted value.</p>
+<li><p>parse: parses inputted value and returns <code class="docutils literal notranslate"><span class="pre">CellType</span></code>.</p>
 <ul>
 <li><p>This calls methods in the order of the <cite>parseFunctions</cite>.</p></li>
 <li><p>This continues parsing until the parse succeeds.
@@ -375,6 +411,7 @@ If parsing does not succeeded until the end, the inputted value will be the pars
 <li><p>parse success means not returning <code class="docutils literal notranslate"><span class="pre">undefined</span></code> or <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p></li>
 </ul>
 </li>
+<li><p>Current cell is passed to second argument.</p></li>
 <li><p>This parses inputted value in the following order:</p>
 <ul>
 <li><p>number: parses it to number type.</p></li>
@@ -405,8 +442,8 @@ If parsing does not succeeded until the end, the inputted value will be the pars
   <span class="nx">evaluate</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nb">eval</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
   <span class="p">}</span>
-  <span class="nx">callback</span><span class="p">(</span><span class="nx">parsed</span><span class="o">:</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">old</span><span class="o">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="sb">`before: </span><span class="si">${</span><span class="nx">old</span><span class="si">}</span><span class="sb">, after: </span><span class="si">${</span><span class="nx">parsed</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+  <span class="nx">callback</span><span class="p">(</span><span class="nx">parsed</span><span class="o">:</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">cell</span><span class="o">:</span> <span class="nx">CellType</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="sb">`before: </span><span class="si">${</span><span class="nx">cell</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">, after: </span><span class="si">${</span><span class="nx">parsed</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
     <span class="k">return</span> <span class="nx">parsed</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -431,8 +468,8 @@ If parsing does not succeeded until the end, the inputted value will be the pars
 </pre></div>
 </div>
 </dd>
-<dt class="field-even">options.resize</dt>
-<dd class="field-even"><dl class="field-list simple">
+<dt class="field-odd">options.resize</dt>
+<dd class="field-odd"><dl class="field-list simple">
 <dt class="field-odd">both</dt>
 <dd class="field-odd"><p>allows resizing both directions.</p>
 </dd>
@@ -454,9 +491,9 @@ If parsing does not succeeded until the end, the inputted value will be the pars
 <li><p>Saving events are emitted by <cite>Ctrl + s</cite> or <cite>Command + s</cite>.</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(matrix,</span> <span class="pre">cellsOption,</span> <span class="pre">positions)</span> <span class="pre">=&gt;</span> <span class="pre">void</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">(table,</span> <span class="pre">positions)</span> <span class="pre">=&gt;</span> <span class="pre">void</span></code></p>
 <ul>
-<li><p><cite>positions</cite> argument has 3 keys. Every values gets cell position indexes like <code class="docutils literal notranslate"><span class="pre">[Y</span> <span class="pre">as</span> <span class="pre">number,</span> <span class="pre">X</span> <span class="pre">as</span> <span class="pre">number]</span></code>.</p>
+<li><p><cite>positions</cite> argument has 3 keys. Every values gets cell position indeces like <code class="docutils literal notranslate"><span class="pre">[Y</span> <span class="pre">as</span> <span class="pre">number,</span> <span class="pre">X</span> <span class="pre">as</span> <span class="pre">number]</span></code>.</p>
 <ul>
 <li><p>pointing: A pointing cell.</p></li>
 <li><p>selectingFrom: A cell selected (dragged) from. If no cells dragged, it will be <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">-1]</span></code>.</p></li>
@@ -469,14 +506,20 @@ If parsing does not succeeded until the end, the inputted value will be the pars
 </dd>
 <dt class="field-even">options.onChange</dt>
 <dd class="field-even"><ul class="simple">
-<li><p>A callback function on <code class="docutils literal notranslate"><span class="pre">matrix</span></code> or <code class="docutils literal notranslate"><span class="pre">options.cells</span></code> changed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(matrix,</span> <span class="pre">cellsOption,</span> <span class="pre">positions)</span> <span class="pre">=&gt;</span> <span class="pre">void</span></code> (same as onSave)</p></li>
+<li><p>A callback function on <code class="docutils literal notranslate"><span class="pre">table</span></code> changed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(table,</span> <span class="pre">positions)</span> <span class="pre">=&gt;</span> <span class="pre">void</span></code> (same as onSave)</p></li>
 </ul>
 </dd>
-<dt class="field-odd">options.onSelect</dt>
+<dt class="field-odd">options.onChangeDiff</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p>A callback function on <code class="docutils literal notranslate"><span class="pre">table</span></code> changed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(table,</span> <span class="pre">positions)</span> <span class="pre">=&gt;</span> <span class="pre">void</span></code> (same as onSave)</p></li>
+</ul>
+</dd>
+<dt class="field-even">options.onSelect</dt>
+<dd class="field-even"><ul class="simple">
 <li><p>A callback function on select or dragging cells.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(matrix,</span> <span class="pre">cellsOption,</span> <span class="pre">positions)</span> <span class="pre">=&gt;</span> <span class="pre">void</span></code> (same as onSave)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(table,</span> <span class="pre">positions)</span> <span class="pre">=&gt;</span> <span class="pre">void</span></code> (same as onSave)</p></li>
 </ul>
 </dd>
 </dl>
@@ -522,6 +565,8 @@ If parsing does not succeeded until the end, the inputted value will be the pars
 <li><a class="reference internal" href="#">ReactGridsheet</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#how-to-use">How to use</a></li>
+<li><a class="reference internal" href="#initial-prop">initial prop</a></li>
+<li><a class="reference internal" href="#difference-prop">difference prop</a></li>
 <li><a class="reference internal" href="#options-prop">options prop</a></li>
 </ul>
 </li>

@@ -4,8 +4,9 @@ import {
   Renderer,
   Parser,
   MatrixType,
-  matrix2tsv,
-  aa2oa
+  aa2oa,
+  matrixIntoCells,
+  CellType,
 } from "react-gridsheet";
 import "./App.css";
 
@@ -19,7 +20,8 @@ class ListRenderer extends Renderer {
       </ul>
     );
   }
-  stringify(value: any): string {
+  stringify(cell: CellType): string {
+    const { value } = cell;
     if (Array.isArray(value)) {
       return value.join("\n");
     }
@@ -48,41 +50,32 @@ export default function App() {
     <div className="App">
       <h1>Sloppy data</h1>
       <GridSheet
-        data={data}
+        initial={matrixIntoCells(data, {
+          default: { width: 200, height: 50 },
+          A: { width: 50, style: { textAlign: "center" } },
+          C: { width: 200 },
+          D: { width: 400, renderer: "list", parser: "list" }
+        })}
         options={{
           headerHeight: 30,
           sheetHeight: 300,
-          cells: {
-            default: { width: 200, height: 50 },
-            A: { width: 50, style: { textAlign: "center" } },
-            C: { width: 200 },
-            D: { width: 400, renderer: "list", parser: "list" }
-          },
           renderers: {
             list: new ListRenderer()
           },
           parsers: {
             list: new ListParser()
           },
-          onSave: (matrix) => {
-            if (matrix == null) {
-              return;
-            }
-            const filtered = matrix
+          onSave: (table) => {
+            const filtered = table.matrixFlatten()
               .filter((row) => row[0])
               .map((row) => row.slice(1));
-            setTsv(matrix2tsv(filtered));
+            setTsv(filtered.map((row) => row.join("\t")).join("\n"));
           },
-          onChange: (matrix, cellsOption) => {
-            if (matrix != null) {
-              console.log(
-                "data onchange:",
-                matrix && aa2oa(matrix, ["name", "occupation", "memo"])
-              );
-            }
-            if (cellsOption != null) {
-              console.log("cellsOption onchange:", cellsOption);
-            }
+          onChange: (table) => {
+            console.log(
+              "data onchange:",
+              aa2oa(table.matrixFlatten(), ["name", "occupation", "memo"])
+            );
           }
         }}
       />

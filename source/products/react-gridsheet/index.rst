@@ -25,6 +25,8 @@ Installation
 How to use
 -------------------------
 
+Simple example.
+
 .. code-block:: jsx
 
   import * as React from "react";
@@ -33,13 +35,49 @@ How to use
   export default function App() {
     return (<div>
       <GridSheet
-        data={[ // Required: any[][]
-           ["a", 1, true],
-           ["b", 2, false],
-           ["c", 3, null],
-        ]}
+        initial={{
+          default: {style: { fontStyle: "italic" }},
+          A: {style: backgroundColor: "#ddf", width: 300},
+          3: {height: 100},
+          A1: {value: "a", style: {color: "#00f"}},
+          B1: {value: 1},
+          C1: {value: true},
+          A2: {value: "b"},
+          B2: {value: 2},
+          C2: {value: false},
+          B1: {value: 3},
+        }}
         options={{ // Optional
-          // all options are optional
+        }}
+        className="some-class"
+        style={{ maxWidth: "100%" }}
+      />
+    </div>);
+  }
+
+Another example using matrix.
+
+.. code-block:: jsx
+
+  import * as React from "react";
+  import { GridSheet, matrixIntoCells } from "react-gridsheet";
+
+  export default function App() {
+    return (<div>
+      <GridSheet
+        initial={matrixIntoCells([
+          ["a", 1, true],
+          ["b", 2, false],
+          ["c", undefined, null],
+        ], {
+          A1: {
+            style: {color: "#50f"}
+          },
+          B3: {
+            value: 33,
+          },
+        })}
+        options={{ // Optional
         }}
         className="some-class"
         style={{ maxWidth: "100%" }}
@@ -52,59 +90,55 @@ How to use
   More examples are `here </products/react-gridsheet/examples>`__.
 
 
+initial prop
+-------------------------
+This prop affects the cells matching the keys.
+
+Key rules:
+
+- `default` (lowercase) field matches all rows, columns and cells.
+
+  - You can set default height and width here.
+
+    - defaultHeight and defaultWidth has been dropped.
+
+- An upppercase letter field means a config for a column.
+
+  - e.g. **A**: 1st column, **B**: 2nd column
+
+- A number Fields means a config for a row.
+
+  - e.g. **1**: 1st row, **2**: 2nd column
+
+- An upppercase letter + A number field means a unique cell.
+
+  - e.g. **A1**: Most top left cell.
+  - If a cell matches multiple cell configs, it applys the configs in the following order: `cell` > `column` > `row` > `default`.
+
+Value of the cell is an object having following keys.
+
+:value: cell value.
+:label: Header's label instead of Column ID. Only row and column configs work.
+:width: Horizontal header's width. (px)
+:height: Vertical header's height. (px)
+:style: Cell style object. (React.CSSProperties)
+:verticalAlign: This field equals css `vertical-align` property.
+:render: Renderer identity. (string)
+:parser: Parser identity. (string)
+
+difference prop
+-------------------------
+This prop changes the data after initialized.
+Note that this change will remain in the history.
+
+Prop type is the same with `initial` prop.
+
 options prop
 -------------------------
 
-:options.cells:
+.. warning::
 
-  ``options.cells`` affects the cells matching the keys.
-
-  - `default` (lowercase) field matches all rows, columns and cells.
-
-    - You can set default height and width here.
-
-      - defaultHeight and defaultWidth has been dropped.
-
-  - An upppercase letter field means a config for a column.
-
-    - e.g. **A**: 1st column, **B**: 2nd column
-
-  - A number Fields means a config for a row.
-
-    - e.g. **1**: 1st row, **2**: 2nd column
-
-  - An upppercase letter + A number field means a unique cell.
-
-    - e.g. **A1**: Most top left cell.
-    - If a cell matches multiple cell configs, it applys the configs in the following order: `cell` > `column` > `row` > `default`.
-
-  :label: Header's label instead of Column ID. Only row and column configs work.
-  :width: Horizontal header's width. (px)
-  :height: Vertical header's height. (px)
-  :style: Cell style object. (React.CSSProperties)
-  :verticalAlign: This field equals css `vertical-align` property.
-  :render: Renderer identity. (string)
-  :parser: Parser identity. (string)
-
-
-  Example:
-
-  .. code-block:: javascript
-
-    cells: {
-      default: {
-        width: 100, // px
-        height: 25, // px
-      },
-      A: {
-        style: {
-          borderBottom: "double 2px #ff0000",
-        },
-      },
-      1: {
-        height: 50,
-      },
-    }
+  - ``options.cells`` was deleted. (=> 0.6.x).
 
 :options.sheetHeight:
 
@@ -175,11 +209,11 @@ options prop
     } from "react-gridsheet";
 
     class QuoteRenderer extends Renderer {
-      string(value) {
-        return `"${value}"`;
+      string(cell) {
+        return `"${cell.value}"`;
       }
-      stringify(value) {
-        return "" + value;
+      stringify(cell) {
+        return "" + cell.value;
       }
     }
 
@@ -213,13 +247,15 @@ options prop
         - parsed value is passed to first argument.
         - previous value is passed to second argument.
 
-      - parse: parses inputted value.
+      - parse: parses inputted value and returns ``CellType``.
 
         - This calls methods in the order of the `parseFunctions`.
         - This continues parsing until the parse succeeds.
           If parsing does not succeeded until the end, the inputted value will be the parsed value.
 
           - parse success means not returning ``undefined`` or ``null``.
+
+        - Current cell is passed to second argument.
 
         - This parses inputted value in the following order:
 
@@ -247,8 +283,8 @@ options prop
       evaluate(value) {
         return eval(value);
       }
-      callback(parsed: any, old: any) {
-        console.debug(`before: ${old}, after: ${parsed}`);
+      callback(parsed: any, cell: CellType) {
+        console.debug(`before: ${cell.value}, after: ${parsed}`);
         return parsed;
       }
     }
@@ -284,21 +320,25 @@ options prop
 
     - Saving events are emitted by `Ctrl + s` or `Command + s`.
 
-  - ``(matrix, cellsOption, positions) => void``
+  - ``(table, positions) => void``
 
-    - `positions` argument has 3 keys. Every values gets cell position indexes like ``[Y as number, X as number]``.
+    - `positions` argument has 3 keys. Every values gets cell position indeces like ``[Y as number, X as number]``.
 
       - pointing: A pointing cell.
       - selectingFrom: A cell selected (dragged) from. If no cells dragged, it will be ``[-1, -1]``.
       - selectingTo: A cell selected (dragged) to. If no cells dragged, it will be ``[-1, -1]``.
 
-
 :options.onChange:
 
-  - A callback function on ``matrix`` or ``options.cells`` changed.
-  - ``(matrix, cellsOption, positions) => void`` (same as onSave)
+  - A callback function on ``table`` changed.
+  - ``(table, positions) => void`` (same as onSave)
+
+:options.onChangeDiff:
+
+  - A callback function on ``table`` changed.
+  - ``(table, positions) => void`` (same as onSave)
 
 :options.onSelect:
 
   - A callback function on select or dragging cells.
-  - ``(matrix, cellsOption, positions) => void`` (same as onSave)
+  - ``(table, positions) => void`` (same as onSave)

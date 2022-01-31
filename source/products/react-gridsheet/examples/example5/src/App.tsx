@@ -1,7 +1,9 @@
 import * as React from "react";
 import {
   GridSheet,
-  Renderer,
+  Parser,
+  matrixIntoCells,
+  CellType,
 } from "react-gridsheet";
 import "./App.css";
 
@@ -17,38 +19,49 @@ export default function App() {
             <td>
               <h2>Resize: both</h2>
               <GridSheet
-                data={Array.from({length: 256}, (i, c) => Array.from({length: 100}, (j, t) => `rgba(${c},${c},${c},${(100-t) / 100})`))}
+                initial={(() => {
+                  const cells = matrixIntoCells(Array.from({length: 256}, (i, c) => Array.from({length: 100}, (j, t) => `rgba(${c},${c},${c},${(100-t) / 100})`)), {});
+                  Object.entries(cells).map(([id, cell]) => {
+                    cells[id] = {...cell, style: {backgroundColor: cell.value}}
+                  });
+                  return {
+                    ...cells,
+                    default: {
+                      style: {color: "#888888", fontSize: 9},
+                      parser: "coloring",
+                    }
+                  };
+                  })()
+                }
                 style={{ maxWidth: "100%" }}
                 options={{
-                  cells: {
-                    default: {
-                      style: {color: "#ffffff", fontSize: 9},
-                      renderer: "coloring",
-                    }
-                  },
-                  renderers: {
-                    coloring: new ColoringRenderer(),
-                  },
                   sheetResize: "both",
+                  parsers: { coloring: new ColoringParser()},
                 }}
               />
             </td>
             <td>
               <h2>Resize: vertical</h2>
               <GridSheet
-                data={Array.from({length: 256}, (i, r) => Array.from({length: 256}, (j, g) => `#${(255-r).toString(16).padStart(2, "0")}${(255-g).toString(16).padStart(2, "0")}00`))}
+                initial={
+                  (() => {
+                    const cells = matrixIntoCells(Array.from({length: 256}, (i, r) => Array.from({length: 256}, (j, g) => `#${(255-r).toString(16).padStart(2, "0")}${(255-g).toString(16).padStart(2, "0")}00`)), {});
+                    Object.entries(cells).map(([id, cell]) => {
+                      cells[id] = {...cell, style: {backgroundColor: cell.value}}
+                    });
+                    return {
+                      ...cells,
+                      default: {
+                        style: {color: "#888888"},
+                        parser: "coloring",
+                      },
+                    };
+                  })()
+                }
                 style={{ maxWidth: "100%"}}
                 options={{
-                  cells: {
-                    default: {
-                      style: {color: "#ffffff"},
-                      renderer: "coloring",
-                    }
-                  },
-                  renderers: {
-                    coloring: new ColoringRenderer(),
-                  },
                   sheetResize: "vertical",
+                  parsers: { coloring: new ColoringParser()},
                 }}
               />
             </td>
@@ -57,38 +70,50 @@ export default function App() {
             <td>
               <h2>Resize: horizontal</h2>
               <GridSheet
-                data={Array.from({length: 256}, (i, r) => Array.from({length: 256}, (j, b) => `#${(255-r).toString(16).padStart(2, "0")}00${(255-b).toString(16).padStart(2, "0")}`))}
+                initial={
+                  (() => {
+                    const cells = matrixIntoCells(Array.from({length: 256}, (i, r) => Array.from({length: 256}, (j, b) => `#${(255-r).toString(16).padStart(2, "0")}00${(255-b).toString(16).padStart(2, "0")}`)), {});
+                    Object.entries(cells).map(([id, cell]) => {
+                      cells[id] = {...cell, style: {backgroundColor: cell.value}}
+                    });
+                    return {
+                      ...cells,
+                      default: {
+                        style: {color: "#888888"},
+                        parser: "coloring",
+                      },
+                    };
+                  })()
+                }
                 style={{ maxWidth: "100%"}}
                 options={{
-                  cells: {
-                    default: {
-                      style: {color: "#ffffff"},
-                      renderer: "coloring",
-                    }
-                  },
-                  renderers: {
-                    coloring: new ColoringRenderer(),
-                  },
                   sheetResize: "horizontal",
+                  parsers: { coloring: new ColoringParser()},
                 }}
               />
             </td>
             <td>
               <h2>Resize: none</h2>
               <GridSheet
-                data={Array.from({length: 256}, (i, g) => Array.from({length: 256}, (j, b) => `#00${(255-g).toString(16).padStart(2, "0")}${(255-b).toString(16).padStart(2, "0")}`))}
+                initial={
+                  (() => {
+                    const cells = matrixIntoCells(Array.from({length: 256}, (i, g) => Array.from({length: 256}, (j, b) => `#00${(255-g).toString(16).padStart(2, "0")}${(255-b).toString(16).padStart(2, "0")}`)), {});
+                    Object.entries(cells).map(([id, cell]) => {
+                      cells[id] = {...cell, style: {backgroundColor: cell.value}}
+                    });
+                    return {
+                      ...cells,
+                      default: {
+                        style: {color: "#888888"},
+                        parser: "coloring",
+                      },
+                    };
+                  })()
+                }
                 style={{ maxWidth: "100%"}}
                 options={{
-                  cells: {
-                    default: {
-                      style: {color: "#ffffff"},
-                      renderer: "coloring",
-                    }
-                  },
-                  renderers: {
-                    coloring: new ColoringRenderer(),
-                  },
                   sheetResize: "none",
+                  parsers: { coloring: new ColoringParser()},
                 }}
               />
             </td>
@@ -99,16 +124,9 @@ export default function App() {
   );
 };
 
-class ColoringRenderer extends Renderer {
-  string(value: string) {
-    return (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          backgroundColor: value,
-        }}
-      >{value}</div>
-    );
+class ColoringParser extends Parser {
+  public parse (value: string, cell: CellType): CellType {
+    const parsed = this._parse(value, cell);
+    return {...cell, value, style: {...cell.style, backgroundColor: `${parsed}`} };
   }
 }

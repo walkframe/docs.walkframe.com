@@ -3,6 +3,7 @@ import { makeAsync, sorters, criteria } from "covertable";
 import {
   GridSheet,
   MatrixType,
+  matrixIntoCells,
 } from "react-gridsheet";
 import "./App.css";
 
@@ -237,16 +238,7 @@ export default function App() {
       </h1>
 
       <GridSheet
-        data={initialData}
-        options={{
-          cells: {},
-          onChange: (data) => {
-            if (data != null) {
-              setInput(pivot(data).map((fields) => fields.filter((f) => !!f)));
-            }
-          },
-          sheetHeight: 280
-        }}
+        cells={matrixIntoCells(initialData, {})}
       />
 
       <button
@@ -282,7 +274,7 @@ export default function App() {
         {processing ? "Processing..." : "Make combinations!"}
       </button>
 
-      <GridSheet data={result} />
+      <GridSheet cells={matrixIntoCells(result, {})} />
     </div>
   );
 }
