@@ -135,4 +135,8 @@ Example6 - Change the data from outside
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-- set the difference to ``changes`` prop.
+- Set the difference to ``changes`` prop.
+
+  - Do not update the variable passed to ``changes`` by the onChange diff. It could be an infinite loop.
+
+- Change history size.

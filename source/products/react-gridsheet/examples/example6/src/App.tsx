@@ -8,9 +8,10 @@ import "./App.css";
 export default function App() {
   const [num, setNum] = React.useState(0);
   React.useEffect(() => {
-    setInterval(() => {
+    const id = setInterval(() => {
       setNum((num + 5) % 100);
-    }, 2000);
+    }, 1000);
+    return () => clearInterval(id);
   });
 
   return (
