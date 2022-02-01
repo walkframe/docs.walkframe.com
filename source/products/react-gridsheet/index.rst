@@ -126,10 +126,10 @@ Value of the cell is an object having following keys.
 :render: Renderer identity. (string)
 :parser: Parser identity. (string)
 
-difference prop
+changes prop
 -------------------------
 This prop changes the data after initialized.
-Note that this change will remain in the history.
+Note that this changes will remain in the history.
 
 Prop type is the same with `initial` prop.
 

@@ -119,3 +119,20 @@ Example5 - Limit width, Resize, Multiple sheets
   - ``{ maxWidth: "100%"}`` prevents the sheet exceeding the parent width.
 
 - ``options.sheetResize`` means `css resize <https://developer.mozilla.org/en-US/docs/Web/CSS/resize>`__ of the sheet.
+
+Example6 - Change the data from outside
+-----------------------------------------------------
+
+:Project: `react-gridsheet-example6/ <https://github.com/walkframe/docs.walkframe.com/tree/main/source/products/react-gridsheet/examples/example6>`__
+:Source: `react-gridsheet-example6/src/App.tsx <https://github.com/walkframe/docs.walkframe.com/blob/main/source/products/react-gridsheet/examples/example6/src/App.tsx>`__
+
+.. raw:: html
+
+  <iframe src="/_static/examples/react-gridsheet-example6/"
+     style="width:100%; height:700px; border:0; border-radius: 4px; overflow:hidden;"
+     title="react-gridsheet sample with parser and feedback method"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+- set the difference to ``changes`` prop.
