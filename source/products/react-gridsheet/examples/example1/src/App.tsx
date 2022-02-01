@@ -1250,7 +1250,12 @@ export default function App() {
           headerHeight: 30,
           renderers: {
             comma: new ThousandSeparatorRenderer(),
-          }
+          },
+          onChangeDiff: (table, positions) => {
+            console.log(
+              "updated:", table.objectFlatten(),
+            );
+          },
         }}
       />
       Via:{" "}
