@@ -11,7 +11,7 @@ Here are `react-gridsheet <https://www.npmjs.com/package/react-gridsheet>`__ exa
   - `GitHub <https://github.com/righ/react-gridsheet>`__
   - `Document </products/react-gridsheet/>`__
 
-Example1 - Simple example
+Example1 - Simple example with formula
 -----------------------------------------
 
 :Project: `react-gridsheet-example1/ <https://github.com/walkframe/docs.walkframe.com/tree/main/source/products/react-gridsheet/examples/example1>`__
@@ -20,15 +20,22 @@ Example1 - Simple example
 .. raw:: html
 
   <iframe src="/_static/examples/react-gridsheet-example1/"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;"
      title="react-gridsheet example simple"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
   ></iframe>
 
+- Support formula
+
+  - Ref
+  - Absolute Ref
+  - functions
+
+    - custom function
+
 - Cell config:
 
-  - ``options.cells[column].label``: Column label.
   - ``options.cells[column].width``: Column width.
   - ``options.cells[column].style``: Cell style in the column.
 
@@ -61,6 +68,17 @@ Example2 - Custom renderers with dark mode
   - ThousandSeparatorRenderer: renders a number with comma. (built-in)
   - ImageRenderer: renders an image related to the string as a link.
   - LinkRenderer: renders a string as a link.
+
+- Cell label
+
+  - ``options.labelers``: Functions to make label by object.
+  - ``cell.labeler``: Name to extract the label function above.
+
+- Freeze number of columns.
+
+  - ``options.minNumCols = 5``
+  - ``options.maxNumCols = 5``
+
 
 Example3 - Event handling
 ------------------------------
@@ -129,14 +147,14 @@ Example6 - Change the data from outside
 .. raw:: html
 
   <iframe src="/_static/examples/react-gridsheet-example6/"
-     style="width:100%; height:700px; border:0; border-radius: 4px; overflow:hidden;"
+     style="width:100%; height:200px; border:0; border-radius: 4px; overflow:hidden;"
      title="react-gridsheet sample with parser and feedback method"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-- Set the difference to ``changes`` prop.
+- use `tableRef`
 
-  - Do not update the variable passed to ``changes`` by the onChange diff. It could be an infinite loop.
+  - `tableRef` has ``dispatch`` and ``table``
+  - update table and dispatch it.
 
-- Change history size.

@@ -4,9 +4,8 @@ import {
   Renderer,
   Parser,
   MatrixType,
-  aa2oa,
   matrixIntoCells,
-  CellType,
+  aa2oa,
 } from "react-gridsheet";
 import "./App.css";
 
@@ -20,12 +19,12 @@ class ListRenderer extends Renderer {
       </ul>
     );
   }
-  stringify(cell: CellType): string {
-    const { value } = cell;
+  stringify({ value }: { value: any[] }): string {
+    console.log({ value });
     if (Array.isArray(value)) {
       return value.join("\n");
     }
-    return value?.toString() || "";
+    return String(value) || "";
   }
 }
 
@@ -36,47 +35,54 @@ class ListParser extends Parser {
   }
 }
 
+const initialData: MatrixType = [
+  [true, "Ichiro", "Baseball player", ["Curry Rice", "Baseball"]],
+  [true, "Jiro", "Ramen shop owner", ["Ramen"]],
+  [true, "Saburo", "Singer", ["Song"]],
+  [true, "Shiro", "Sword master", ["Christianity"]],
+  [true, "Goro", "Solo proprietorship", ["Eating alone"]],
+];
+
 export default function App() {
-  const [data] = React.useState<MatrixType>([
-    [true, "Ichiro", "Baseball player", ["Curry Rice", "Baseball"]],
-    [true, "Jiro", "Ramen shop owner", ["Ramen"]],
-    [true, "Saburo", "Singer", ["Song"]],
-    [true, "Shiro", "Sword master", ["Christianity"]],
-    [true, "Goro", "Solo proprietorship", ["Eating alone"]]
-  ]);
   const [tsv, setTsv] = React.useState("");
 
   return (
     <div className="App">
       <h1>Sloppy data</h1>
       <GridSheet
-        initial={matrixIntoCells(data, {
-          default: { width: 200, height: 50 },
+        initial={matrixIntoCells(initialData, {
+          default: { height: 100 },
           A: { width: 50, style: { textAlign: "center" } },
           C: { width: 200 },
-          D: { width: 400, renderer: "list", parser: "list" }
+          D: { width: 400, renderer: "list", parser: "list" },
         })}
         options={{
           headerHeight: 30,
-          sheetHeight: 300,
+          sheetWidth: 600,
+          sheetHeight: 600,
+
           renderers: {
-            list: new ListRenderer()
+            list: new ListRenderer(),
           },
           parsers: {
-            list: new ListParser()
+            list: new ListParser(),
           },
           onSave: (table) => {
-            const filtered = table.matrixFlatten()
+            const matrix = table.getMatrixFlatten();
+            const filtered = matrix
               .filter((row) => row[0])
               .map((row) => row.slice(1));
-            setTsv(filtered.map((row) => row.join("\t")).join("\n"));
+            setTsv(filtered.map((cols) => cols.join("\t")).join("\n"));
           },
           onChange: (table) => {
-            console.log(
-              "data onchange:",
-              aa2oa(table.matrixFlatten(), ["name", "occupation", "memo"])
-            );
-          }
+            const matrix = table.getMatrixFlatten();
+            if (matrix != null) {
+              console.log(
+                "data onchange:",
+                matrix && aa2oa(matrix, ["name", "occupation", "memo"])
+              );
+            }
+          },
         }}
       />
       <p>TSV: (Ctrl+s to update)</p>

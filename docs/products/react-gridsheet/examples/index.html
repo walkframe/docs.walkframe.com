@@ -137,8 +137,8 @@
 <li><p><a class="reference external" href="/products/react-gridsheet/">Document</a></p></li>
 </ul>
 </div>
-<div class="section" id="example1-simple-example">
-<h2>Example1 - Simple example<a class="headerlink" href="#example1-simple-example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example1-simple-example-with-formula">
+<h2>Example1 - Simple example with formula<a class="headerlink" href="#example1-simple-example-with-formula" title="Permalink to this headline">¶</a></h2>
 <dl class="field-list simple">
 <dt class="field-odd">Project</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://github.com/walkframe/docs.walkframe.com/tree/main/source/products/react-gridsheet/examples/example1">react-gridsheet-example1/</a></p>
@@ -147,10 +147,20 @@
 <dd class="field-even"><p><a class="reference external" href="https://github.com/walkframe/docs.walkframe.com/blob/main/source/products/react-gridsheet/examples/example1/src/App.tsx">react-gridsheet-example1/src/App.tsx</a></p>
 </dd>
 </dl>
-<iframe allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" src="/_static/examples/react-gridsheet-example1/" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="react-gridsheet example simple"></iframe><ul class="simple">
+<iframe allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" src="/_static/examples/react-gridsheet-example1/" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" title="react-gridsheet example simple"></iframe><ul class="simple">
+<li><p>Support formula</p>
+<ul>
+<li><p>Ref</p></li>
+<li><p>Absolute Ref</p></li>
+<li><p>functions</p>
+<ul>
+<li><p>custom function</p></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>Cell config:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">options.cells[column].label</span></code>: Column label.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">options.cells[column].width</span></code>: Column width.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">options.cells[column].style</span></code>: Cell style in the column.</p></li>
 </ul>
@@ -183,6 +193,18 @@
 <li><p>ThousandSeparatorRenderer: renders a number with comma. (built-in)</p></li>
 <li><p>ImageRenderer: renders an image related to the string as a link.</p></li>
 <li><p>LinkRenderer: renders a string as a link.</p></li>
+</ul>
+</li>
+<li><p>Cell label</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">options.labelers</span></code>: Functions to make label by object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cell.labeler</span></code>: Name to extract the label function above.</p></li>
+</ul>
+</li>
+<li><p>Freeze number of columns.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">options.minNumCols</span> <span class="pre">=</span> <span class="pre">5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">options.maxNumCols</span> <span class="pre">=</span> <span class="pre">5</span></code></p></li>
 </ul>
 </li>
 </ul>
@@ -260,13 +282,13 @@
 <dd class="field-even"><p><a class="reference external" href="https://github.com/walkframe/docs.walkframe.com/blob/main/source/products/react-gridsheet/examples/example6/src/App.tsx">react-gridsheet-example6/src/App.tsx</a></p>
 </dd>
 </dl>
-<iframe allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" src="/_static/examples/react-gridsheet-example6/" style="width:100%; height:700px; border:0; border-radius: 4px; overflow:hidden;" title="react-gridsheet sample with parser and feedback method"></iframe><ul class="simple">
-<li><p>Set the difference to <code class="docutils literal notranslate"><span class="pre">changes</span></code> prop.</p>
+<iframe allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" src="/_static/examples/react-gridsheet-example6/" style="width:100%; height:200px; border:0; border-radius: 4px; overflow:hidden;" title="react-gridsheet sample with parser and feedback method"></iframe><ul class="simple">
+<li><p>use <cite>tableRef</cite></p>
 <ul>
-<li><p>Do not update the variable passed to <code class="docutils literal notranslate"><span class="pre">changes</span></code> by the onChange diff. It could be an infinite loop.</p></li>
+<li><p><cite>tableRef</cite> has <code class="docutils literal notranslate"><span class="pre">dispatch</span></code> and <code class="docutils literal notranslate"><span class="pre">table</span></code></p></li>
+<li><p>update table and dispatch it.</p></li>
 </ul>
 </li>
-<li><p>Change history size.</p></li>
 </ul>
 </div>
 </div>
@@ -308,7 +330,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Examples</a><ul>
-<li><a class="reference internal" href="#example1-simple-example">Example1 - Simple example</a></li>
+<li><a class="reference internal" href="#example1-simple-example-with-formula">Example1 - Simple example with formula</a></li>
 <li><a class="reference internal" href="#example2-custom-renderers-with-dark-mode">Example2 - Custom renderers with dark mode</a></li>
 <li><a class="reference internal" href="#example3-event-handling">Example3 - Event handling</a></li>
 <li><a class="reference internal" href="#example4-date-reloading">Example4 - Date reloading</a></li>

@@ -230,7 +230,7 @@
 </li>
 <li><p>A number Fields means a config for a row.</p>
 <ul>
-<li><p>e.g. <strong>1</strong>: 1st row, <strong>2</strong>: 2nd column</p></li>
+<li><p>e.g. <strong>1</strong>: 1st row, <strong>2</strong>: 2nd row.</p></li>
 </ul>
 </li>
 <li><p>An upppercase letter + A number field means a unique cell.</p>
@@ -266,13 +266,15 @@
 <dt class="field-even">parser</dt>
 <dd class="field-even"><p>Parser identity. (string)</p>
 </dd>
+<dt class="field-odd">labeler</dt>
+<dd class="field-odd"><p>Labeler identity. (string)</p>
+</dd>
 </dl>
 </div>
-<div class="section" id="changes-prop">
-<h2>changes prop<a class="headerlink" href="#changes-prop" title="Permalink to this headline">¶</a></h2>
-<p>This prop changes the data after initialized.
-Note that this changes will remain in the history.</p>
-<p>Prop type is the same with <cite>initial</cite> prop.</p>
+<div class="section" id="tableref">
+<h2>tableRef<a class="headerlink" href="#tableref" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">tableRef</span></code> can be created by <cite>createTableRef()</cite>.</p>
+<p>We can access to table through it.</p>
 </div>
 <div class="section" id="options-prop">
 <h2>options prop<a class="headerlink" href="#options-prop" title="Permalink to this headline">¶</a></h2>
@@ -285,17 +287,41 @@ Note that this changes will remain in the history.</p>
 <dl class="field-list">
 <dt class="field-odd">options.sheetHeight</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p>Sheet width size.</p></li>
+<li><p>Sheet height size.</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">500</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">options.sheetWidth</dt>
 <dd class="field-even"><ul class="simple">
-<li><p>History (undo, redo) size.</p></li>
+<li><p>Sheet width size.</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">1000</span></code></p></li>
 </ul>
 </dd>
-<dt class="field-odd">options.historySize</dt>
+<dt class="field-odd">options.minNumRows</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>Min number of rows</p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">options.maxNumRows</dt>
+<dd class="field-even"><ul class="simple">
+<li><p>Max number of rows</p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">options.minNumCols</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>Min number of columns</p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">options.maxNumCols</dt>
+<dd class="field-even"><ul class="simple">
+<li><p>Max number of columns</p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">options.historyLimit</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p>History (undo, redo) size.</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
@@ -509,15 +535,13 @@ If parsing does not succeeded until the end, the inputted value will be the pars
 <li><p>A callback function on <code class="docutils literal notranslate"><span class="pre">table</span></code> changed.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">(table,</span> <span class="pre">positions)</span> <span class="pre">=&gt;</span> <span class="pre">void</span></code> (same as onSave)</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>onChangeDiff was dropped.</p>
+</div>
 </dd>
-<dt class="field-odd">options.onChangeDiff</dt>
+<dt class="field-odd">options.onSelect</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p>A callback function on <code class="docutils literal notranslate"><span class="pre">table</span></code> changed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(table,</span> <span class="pre">positions)</span> <span class="pre">=&gt;</span> <span class="pre">void</span></code> (same as onSave)</p></li>
-</ul>
-</dd>
-<dt class="field-even">options.onSelect</dt>
-<dd class="field-even"><ul class="simple">
 <li><p>A callback function on select or dragging cells.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">(table,</span> <span class="pre">positions)</span> <span class="pre">=&gt;</span> <span class="pre">void</span></code> (same as onSave)</p></li>
 </ul>
@@ -566,7 +590,7 @@ If parsing does not succeeded until the end, the inputted value will be the pars
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#how-to-use">How to use</a></li>
 <li><a class="reference internal" href="#initial-prop">initial prop</a></li>
-<li><a class="reference internal" href="#changes-prop">changes prop</a></li>
+<li><a class="reference internal" href="#tableref">tableRef</a></li>
 <li><a class="reference internal" href="#options-prop">options prop</a></li>
 </ul>
 </li>

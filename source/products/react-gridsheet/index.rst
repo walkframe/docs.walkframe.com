@@ -108,7 +108,7 @@ Key rules:
 
 - A number Fields means a config for a row.
 
-  - e.g. **1**: 1st row, **2**: 2nd column
+  - e.g. **1**: 1st row, **2**: 2nd row.
 
 - An upppercase letter + A number field means a unique cell.
 
@@ -125,13 +125,17 @@ Value of the cell is an object having following keys.
 :verticalAlign: This field equals css `vertical-align` property.
 :render: Renderer identity. (string)
 :parser: Parser identity. (string)
+:labeler: Labeler identity. (string)
 
-changes prop
+
+tableRef
 -------------------------
-This prop changes the data after initialized.
-Note that this changes will remain in the history.
+``tableRef`` can be created by `createTableRef()`.
 
-Prop type is the same with `initial` prop.
+We can access to table through it.
+
+
+
 
 options prop
 -------------------------
@@ -142,15 +146,35 @@ options prop
 
 :options.sheetHeight:
 
-  - Sheet width size.
+  - Sheet height size.
   - default: ``500``
 
 :options.sheetWidth:
 
-  - History (undo, redo) size.
+  - Sheet width size.
   - default: ``1000``
 
-:options.historySize:
+:options.minNumRows:
+
+  - Min number of rows
+  - default: ``1``
+
+:options.maxNumRows:
+
+  - Max number of rows
+  - default: ``-1``
+
+:options.minNumCols:
+
+  - Min number of columns
+  - default: ``1``
+
+:options.maxNumCols:
+
+  - Max number of columns
+  - default: ``-1``
+
+:options.historyLimit:
 
   - History (undo, redo) size.
   - default: ``10``
@@ -333,10 +357,9 @@ options prop
   - A callback function on ``table`` changed.
   - ``(table, positions) => void`` (same as onSave)
 
-:options.onChangeDiff:
+  .. warning::
 
-  - A callback function on ``table`` changed.
-  - ``(table, positions) => void`` (same as onSave)
+    onChangeDiff was dropped.
 
 :options.onSelect:
 
