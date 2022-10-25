@@ -1,0 +1,15 @@
+3.x
+=======
+
+Back to `history index </products/d2a/history/>`__
+
+3.0.x
+-------
+:Date: 2021-04-17
+
+- Code generation debut.
+- AUTOLOAD got deprecated.
+
+  - When you do not specify ``"AUTOLOAD"`` in your ``settings.D2A_CONFIG``, AUTOLOAD gets disabled.
+
+- query_expression's default printer switched to ``print`` from ``logger.debug``

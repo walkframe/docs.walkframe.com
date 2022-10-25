@@ -1,0 +1,39 @@
+0.x
+=======
+
+Back to `history index </products/d2a/history/>`__
+
+0.0.6
+--------
+
+- Fixed a bug that abstract models become the targets.
+- Deleted `install_requires`.
+
+0.0.5
+--------
+
+- added alias method.
+
+0.0.4
+--------
+
+- fixed bugs.
+
+0.0.3
+--------
+
+- it got easy to declare custom field.
+- transfer method can define secondary table.
+
+0.0.2
+--------
+
+- it supported m2m field.
+- it limited django version less than `1.9`.
+
+0.0.1 
+--------
+:Date: 2017-12-27
+
+- first release
+

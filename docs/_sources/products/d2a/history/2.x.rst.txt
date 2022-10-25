@@ -1,0 +1,116 @@
+2.x
+=======
+
+Back to `history index </products/d2a/history/>`__
+
+2.8.x
+--------
+:Date: 2021-03-19
+
+- Dropped Python `3.5.x`.
+- Supported Python `3.9.x`.
+- Supported SQLAlchemy `1.4.x`.
+
+2.7.x
+--------
+
+- Dropped sleep option.
+
+2.6.x
+--------
+:Date: 2020-06-06
+
+- Add `MISSING` option.
+
+2.5.x
+--------
+:Date: 2020-05-26
+
+- Dropped support for `django1.11`
+- Changed key format. (`prefix:_` to `around:__`)
+- Set up continuous deployment to PyPI.
+
+2.4.x
+--------
+:Date: 2020-05-26
+
+- Add postgres fields
+
+  - `CIText fields <https://docs.djangoproject.com/en/3.0/ref/contrib/postgres/fields/#citext-fields>`__
+
+    - CICharField
+    - CIEmailField
+    - CITextField
+    
+  - `Range fields <https://docs.djangoproject.com/en/3.0/ref/contrib/postgres/fields/#range-fields>`__
+
+    - IntegerRangeField
+    - BigIntegerRangeField
+    - DecimalRangeField
+    - FloatRangeField
+    - DateTimeRangeField
+    - DateRangeField
+
+  - `HStoreField <https://docs.djangoproject.com/en/3.0/ref/contrib/postgres/fields/#hstorefield>`__
+
+2.3.x
+--------
+:Date: 2020-05-25
+
+- GeoAlchemy2 support.
+
+  - It translates 
+    `GeoDjango fields <https://docs.djangoproject.com/en/3.0/ref/contrib/gis/model-api/>`__
+    into 
+    `GeoAlchemy2 fields <https://geoalchemy-2.readthedocs.io/en/0.2.6/types.html>`__.
+
+2.2.x
+--------
+:Date: 2020-01-03, 2020-02-13
+ 
+- Supported the following fields:
+
+  - `PositiveBigIntegerField`
+  - `SmallAutoField`
+
+- Dropped support for the following versions:
+
+  - Python: `< 3.5.0`.
+  - SQLAlchemy: `< 1.1.0`.
+
+- ``d2a.make_engine`` can receive all ``create_engine`` arguments now.
+- Remapped django JSONField to JSONB (it was ``JSON`` before)
+- Migrated to GitHub Actions from CircleCI.
+
+
+2.1.x
+--------
+
+- Changed: 
+  
+  - **Warning:** Changed arg name ``as_dict`` to ``as_col_dict``
+  
+- Added:
+    
+  as_row_list
+    
+    If result set being list type or not.
+  
+    default is ``True``.
+  
+  dict_method
+  
+    A method making row to dict.
+    You got to be able to change the method to ``dict()``.
+
+    default is ``collections.OrderedDict``.
+
+  debug
+    
+    If showing debug information or not. specify options dict.
+
+2.0.x
+--------
+
+- Added a shortcut function for executing in ORM mode.
+- Added two shortcut functions for executing in EXPRESSION mode.
