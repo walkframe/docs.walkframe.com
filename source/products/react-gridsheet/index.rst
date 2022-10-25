@@ -127,14 +127,11 @@ Value of the cell is an object having following keys.
 :parser: Parser identity. (string)
 :labeler: Labeler identity. (string)
 
-
 tableRef
 -------------------------
 ``tableRef`` can be created by `createTableRef()`.
 
 We can access to table through it.
-
-
 
 
 options prop

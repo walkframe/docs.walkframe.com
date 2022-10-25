@@ -51,7 +51,7 @@ const initialData = [
     "",
   ],
   [
-    "meron",
+    "melon",
     98,
     "=HLOOKUP(B8, $A$1:$F$2, 2, true)",
     "",
