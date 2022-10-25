@@ -60,23 +60,30 @@ Another example using matrix.
 .. code-block:: jsx
 
   import * as React from "react";
-  import { GridSheet, matrixIntoCells } from "react-gridsheet";
+  import { GridSheet, generateInitial } from "react-gridsheet";
 
   export default function App() {
     return (<div>
       <GridSheet
-        initial={matrixIntoCells([
-          ["a", 1, true],
-          ["b", 2, false],
-          ["c", undefined, null],
-        ], {
-          A1: {
-            style: {color: "#50f"}
-          },
-          B3: {
-            value: 33,
-          },
-        })}
+        initial={
+          generateInitial({
+            matrixes: {
+              A1: [
+                ["a", 1, true],
+                ["b", 2, false],
+                ["c", undefined, null],
+              ],
+            }
+            cells: {
+              A1: {
+                style: {color: "#50f"}
+              },
+              B3: {
+                value: 33,
+              },
+            }
+          })
+        }
         options={{ // Optional
         }}
         className="some-class"
