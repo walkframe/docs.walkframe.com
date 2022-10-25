@@ -178,23 +178,30 @@
 </div>
 <p>Another example using matrix.</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">"react"</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">GridSheet</span><span class="p">,</span> <span class="nx">matrixIntoCells</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"react-gridsheet"</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">GridSheet</span><span class="p">,</span> <span class="nx">generateInitial</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">"react-gridsheet"</span><span class="p">;</span>
 
 <span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">GridSheet</span>
-      <span class="na">initial</span><span class="o">=</span><span class="p">{</span><span class="nx">matrixIntoCells</span><span class="p">([</span>
-        <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">],</span>
-        <span class="p">[</span><span class="s2">"b"</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="kc">false</span><span class="p">],</span>
-        <span class="p">[</span><span class="s2">"c"</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">null</span><span class="p">],</span>
-      <span class="p">],</span> <span class="p">{</span>
-        <span class="nx">A1</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">style</span><span class="o">:</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s2">"#50f"</span><span class="p">}</span>
-        <span class="p">},</span>
-        <span class="nx">B3</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">value</span><span class="o">:</span> <span class="mf">33</span><span class="p">,</span>
-        <span class="p">},</span>
-      <span class="p">})}</span>
+      <span class="na">initial</span><span class="o">=</span><span class="p">{</span>
+        <span class="nx">generateInitial</span><span class="p">({</span>
+          <span class="nx">matrixes</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">A1</span><span class="o">:</span> <span class="p">[</span>
+              <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="kc">true</span><span class="p">],</span>
+              <span class="p">[</span><span class="s2">"b"</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="kc">false</span><span class="p">],</span>
+              <span class="p">[</span><span class="s2">"c"</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">,</span> <span class="kc">null</span><span class="p">],</span>
+            <span class="p">],</span>
+          <span class="p">}</span>
+          <span class="nx">cells</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">A1</span><span class="o">:</span> <span class="p">{</span>
+              <span class="nx">style</span><span class="o">:</span> <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s2">"#50f"</span><span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nx">B3</span><span class="o">:</span> <span class="p">{</span>
+              <span class="nx">value</span><span class="o">:</span> <span class="mf">33</span><span class="p">,</span>
+            <span class="p">},</span>
+          <span class="p">}</span>
+        <span class="p">})</span>
+      <span class="p">}</span>
       <span class="na">options</span><span class="o">=</span><span class="p">{{</span> <span class="c1">// Optional</span>
       <span class="p">}}</span>
       <span class="na">className</span><span class="o">=</span><span class="s">"some-class"</span>
