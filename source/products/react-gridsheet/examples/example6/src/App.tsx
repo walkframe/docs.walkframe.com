@@ -1,5 +1,5 @@
 import * as React from "react";
-import { GridSheet, matrixIntoCells, createTableRef } from "react-gridsheet";
+import { GridSheet, generateInitial, createTableRef } from "react-gridsheet";
 import "./index.css";
 
 export default function App() {
@@ -25,15 +25,17 @@ export default function App() {
       <h2>See console log</h2>
       <GridSheet
         tableRef={tableRef}
-        initial={matrixIntoCells(
-          [
-            [undefined, 2, 3, 4, 5],
-            [undefined, undefined, 8, 9, 10],
-            [undefined, undefined, undefined, 14, 15],
-            [undefined, undefined, undefined, undefined, 20],
-            [undefined, undefined, undefined, undefined, undefined],
-          ],
-          {
+        initial={generateInitial({
+          matrixes: {
+            A1: [
+              [undefined, 2, 3, 4, 5],
+              [undefined, undefined, 8, 9, 10],
+              [undefined, undefined, undefined, 14, 15],
+              [undefined, undefined, undefined, undefined, 20],
+              [undefined, undefined, undefined, undefined, undefined],
+            ],
+          },
+          cells: {
             default: {
               style: { fontWeight: "bold" },
             },
@@ -72,8 +74,8 @@ export default function App() {
               value: 5,
               style: { backgroundColor: "#ff00ff50" },
             },
-          }
-        )}
+          },
+        })}
         options={{
           sheetWidth: 500,
           sheetHeight: 200,

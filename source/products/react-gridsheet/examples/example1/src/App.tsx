@@ -1,5 +1,5 @@
 import * as React from "react";
-import { GridSheet, matrixIntoCells, BaseFunction } from "react-gridsheet";
+import { GridSheet, generateInitial, BaseFunction } from "react-gridsheet";
 import "./index.css";
 
 class HopeFunction extends BaseFunction {
@@ -80,26 +80,29 @@ export default function App() {
   return (
     <div className="App">
       <GridSheet
-        initial={matrixIntoCells(initialData, {
-          1: { style: { backgroundColor: "#ddd" } },
-          2: { style: {} },
-          3: { style: {} },
-          A: { width: 50 },
-          B: { width: 50 },
-          C: { width: 50 },
-          D: { width: 50 },
-          E: { width: 50 },
-          F: { width: 50 },
-          G: { width: 200 },
-          H7: { style: { backgroundColor: "#ffeeee" } },
-          A4: {
-            style: { backgroundColor: "#dddddd" },
-          },
-          B4: {
-            style: { backgroundColor: "#dddddd" },
-          },
-          C4: {
-            style: { backgroundColor: "#dddddd" },
+        initial={generateInitial({
+          matrixes: { A1: initialData },
+          cells: {
+            1: { style: { backgroundColor: "#ddd" } },
+            2: { style: {} },
+            3: { style: {} },
+            A: { width: 50 },
+            B: { width: 50 },
+            C: { width: 50 },
+            D: { width: 50 },
+            E: { width: 50 },
+            F: { width: 50 },
+            G: { width: 200 },
+            H7: { style: { backgroundColor: "#ffeeee" } },
+            A4: {
+              style: { backgroundColor: "#dddddd" },
+            },
+            B4: {
+              style: { backgroundColor: "#dddddd" },
+            },
+            C4: {
+              style: { backgroundColor: "#dddddd" },
+            },
           },
         })}
         additionalFunctions={{

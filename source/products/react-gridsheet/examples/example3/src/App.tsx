@@ -4,7 +4,7 @@ import {
   Renderer,
   Parser,
   MatrixType,
-  matrixIntoCells,
+  generateInitial,
   aa2oa,
 } from "react-gridsheet";
 import "./App.css";
@@ -50,11 +50,14 @@ export default function App() {
     <div className="App">
       <h1>Sloppy data</h1>
       <GridSheet
-        initial={matrixIntoCells(initialData, {
-          default: { height: 100 },
-          A: { width: 50, style: { textAlign: "center" } },
-          C: { width: 200 },
-          D: { width: 400, renderer: "list", parser: "list" },
+        initial={generateInitial({
+          matrixes: { A1: initialData },
+          cells: {
+            default: { height: 100 },
+            A: { width: 50, style: { textAlign: "center" } },
+            C: { width: 200 },
+            D: { width: 400, renderer: "list", parser: "list" },
+          },
         })}
         options={{
           headerHeight: 30,

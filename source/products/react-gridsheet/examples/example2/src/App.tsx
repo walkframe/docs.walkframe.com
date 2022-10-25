@@ -5,7 +5,7 @@ import {
   oa2aa,
   Renderer,
   MatrixType,
-  matrixIntoCells,
+  generateInitial,
 } from "react-gridsheet";
 import "./App.css";
 
@@ -64,24 +64,27 @@ export default function App() {
 
       {data.length === 0 ? null : (
         <GridSheet
-          initial={matrixIntoCells(data, {
-            default: {
-              height: 100,
+          initial={generateInitial({
+            matrixes: { A1: data },
+            cells: {
+              default: {
+                height: 100,
+              },
+              A: {
+                labeler: "id",
+                width: 80,
+                style: { textAlign: "right" },
+                renderer: "id",
+              },
+              B: { labeler: "avatar", renderer: "image" },
+              C: { labeler: "user", width: 150 },
+              D: {
+                labeler: "url",
+                width: 300,
+                renderer: "link",
+              },
+              E: { labeler: "contributions", style: { textAlign: "right" } },
             },
-            A: {
-              labeler: "id",
-              width: 80,
-              style: { textAlign: "right" },
-              renderer: "id",
-            },
-            B: { labeler: "avatar", renderer: "image" },
-            C: { labeler: "user", width: 150 },
-            D: {
-              labeler: "url",
-              width: 300,
-              renderer: "link",
-            },
-            E: { labeler: "contributions", style: { textAlign: "right" } },
           })}
           options={{
             mode: "dark",
