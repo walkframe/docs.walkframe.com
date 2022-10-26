@@ -28,8 +28,8 @@ export default function App() {
               ["banana", 65, "=HLOOKUP(B9, $A$1:$F$2, 2, true)"],
             ],
             F4: [
-              ["NOW:", '=HOPE("World peace") & "!!"'],
-              ["", ""],
+              ["NOW:", "=NOW()"],
+              ["", '=HOPE("World peace") & "!!"'],
             ],
             G7: [
               ["Greater than", 70],
