@@ -9,79 +9,33 @@ class HopeFunction extends BaseFunction {
   }
 }
 
-const initialData = [
-  [0, "=A1+60", "=B1+10", "=C1+10", "=D1+10", "=E1+5", "", "", "", ""],
-  ["E", "D", "C", "B", "A", "S", "", "", "", ""],
-  ["", "", "", "", "", "NOW:", "=NOW()", "", "", ""],
-  [
-    "Name",
-    "Point",
-    "Rank",
-    "",
-    "",
-    "",
-    '=HOPE("World peace") & "!!"',
-    "",
-    "",
-    "",
-  ],
-  ["apple", 50, "=HLOOKUP(B5, $A$1:$F$2, 2, true)", "", "", "", "", "", "", ""],
-  [
-    "orange",
-    82,
-    "=HLOOKUP(B6, $A$1:$F$2, 2, true)",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ],
-  [
-    "grape",
-    75,
-    "=HLOOKUP(B7, $A$1:$F$2, 2, true)",
-    "",
-    "",
-    "",
-    "Greater than",
-    70,
-    "",
-    "",
-  ],
-  [
-    "melon",
-    98,
-    "=HLOOKUP(B8, $A$1:$F$2, 2, true)",
-    "",
-    "",
-    "",
-    '\'=countif(B5:B9, ">" & H7)',
-    '=countif(B5:B9, ">" & H7)',
-    "",
-    "",
-  ],
-  [
-    "banana",
-    65,
-    "=HLOOKUP(B9, $A$1:$F$2, 2, true)",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ],
-];
-
 export default function App() {
   return (
     <div className="App">
       <GridSheet
         initial={generateInitial({
-          matrixes: { A1: initialData },
+          matrixes: {
+            A1: [
+              [0, "=A1+60", "=B1+10", "=C1+10", "=D1+10", "=E1+5"],
+              ["E", "D", "C", "B", "A", "S"],
+            ],
+            A4: [
+              ["Name", "Point", "Rank"],
+              ["apple", 50, "=HLOOKUP(B5, $A$1:$F$2, 2, true)"],
+              ["orange", 82, "=HLOOKUP(B6, $A$1:$F$2, 2, true)"],
+              ["grape", 75, "=HLOOKUP(B7, $A$1:$F$2, 2, true)"],
+              ["melon", 98, "=HLOOKUP(B8, $A$1:$F$2, 2, true)"],
+              ["banana", 65, "=HLOOKUP(B9, $A$1:$F$2, 2, true)"],
+            ],
+            F4: [
+              ["NOW:", '=HOPE("World peace") & "!!"'],
+              ["", ""],
+            ],
+            G7: [
+              ["Greater than", 70],
+              ['\'=countif(B5:B9, ">" & H7)', '=countif(B5:B9, ">" & H7)'],
+            ],
+          },
           cells: {
             1: { style: { backgroundColor: "#ddd" } },
             2: { style: {} },
