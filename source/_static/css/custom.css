@@ -57,3 +57,7 @@ dl.field-list dd {
     border: solid 1px #777777;
   }
 }
+
+article .align-default {
+  margin-left: initial;
+}

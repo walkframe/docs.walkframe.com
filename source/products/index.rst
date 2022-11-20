@@ -28,7 +28,7 @@ react-ipynb-renderer
   :stub-columns: 1
 
   * - Document:
-    - `react-gridsheet </products/react-ipynb-renderer/>`__
+    - `react-ipynb-renderer </products/react-ipynb-renderer/>`__
   * - Description:
     - Jupyter notebook component for ReactJS.
   * - Uses:

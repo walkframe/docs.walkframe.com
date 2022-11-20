@@ -1,3 +1,5 @@
+# Overview
+
 This component draws an ipynb file in Jupyter Notebook. 
 You can use MathJax or Katex to render math expressions; install react-ipynb-renderer if you use MathJax, or react-ipynb-renderer-katex if you use Katex.
 
@@ -6,8 +8,8 @@ react-ipynb-renderer-katex is more lightweight, but some syntax is not supported
 
 # Demo
 
-- https://codesandbox.io/s/react-ipynb-renderer-sample-kbu4z?file=/src/App.tsx
-- https://codesandbox.io/s/react-ipynb-renderer-katex-sample-770np1?file=/src/App.tsx
+- [codesandbox react-ipynb-renderer](https://codesandbox.io/s/react-ipynb-renderer-sample-kbu4z?file=/src/App.tsx)
+- [codesandbox react-ipynb-renderer-katex](https://codesandbox.io/s/react-ipynb-renderer-katex-sample-770np1?file=/src/App.tsx)
 
 # Install
 
@@ -76,8 +78,8 @@ export const Component = () => {
 
 # More information
 
-- [Options](./options/)
-- [Theme](./theme/)
-- [History](./history/)
-- [Code migration](./migration/)
+- [Options](./options)
+- [Theme](./theme)
+- [History](./history)
+- [Code migration](./migration)
 

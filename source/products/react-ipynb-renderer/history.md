@@ -1,3 +1,5 @@
+<a href="/products/react-ipynb-renderer">Back to index</a>
+
 # History
 
 ## v1.2.x
