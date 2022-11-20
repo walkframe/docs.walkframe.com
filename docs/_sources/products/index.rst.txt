@@ -6,7 +6,7 @@
 Products
 ==============
 
-ReactGridsheet
+react-gridsheet
 --------------
 
 .. list-table::
@@ -15,11 +15,27 @@ ReactGridsheet
   * - Document:
     - `react-gridsheet </products/react-gridsheet/>`__
   * - Description:
-    - A react component like spreadsheet.
+    - Spreadsheet component for ReactJS.
   * - Uses:
     - TypeScript, React
   * - GitHub:
     - https://github.com/walkframe/react-gridsheet
+
+react-ipynb-renderer
+--------------
+
+.. list-table::
+  :stub-columns: 1
+
+  * - Document:
+    - `react-ipynb-renderer </products/react-ipynb-renderer/>`__
+  * - Description:
+    - Jupyter notebook component for ReactJS.
+  * - Uses:
+    - TypeScript, React
+  * - GitHub:
+    - https://github.com/righ/react-ipynb-renderer
+
 
 CoverTable
 --------------
