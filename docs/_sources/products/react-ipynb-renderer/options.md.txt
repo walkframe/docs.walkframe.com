@@ -110,9 +110,8 @@ You can pass options for this library to `mathjax3`.
 
 See below for detailed options.
 
-<a href="https://github.com/tani/markdown-it-mathjax3" target="_blank" rel="noreferrer">
-https://github.com/tani/markdown-it-mathjax3</a>
-
+- <a href="https://github.com/tani/markdown-it-mathjax3" target="_blank" rel="noreferrer">https://github.com/tani/markdown-it-mathjax3</a>
+- <a href="https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html" target="_blank" rel="noreferrer">https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html</a>
 
 
 # react-ipynb-renderer-katex's options
