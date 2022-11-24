@@ -37,15 +37,7 @@ import "react-ipynb-renderer/dist/styles/monokai.css";
 import ipynb from "./test.ipynb";
 
 export const Component = () => {
-  return (<>
-    <IpynbRenderer
-      ipynb={ipynb}
-      mdiOptions={{
-        html: true,
-        linkify: true,
-      }}
-    />
-  </>);
+    return (<IpynbRenderer ipynb={ipynb} />);
 };
 ```
 
@@ -63,15 +55,7 @@ import "react-ipynb-renderer-katex/dist/styles/monokai.css";
 import ipynb from "./test.ipynb";
 
 export const Component = () => {
-  return (<>
-    <IpynbRenderer
-      ipynb={ipynb}
-      mdiOptions={{
-        html: true,
-        linkify: true,
-      }}
-    />
-  </>);
+  return (<IpynbRenderer ipynb={ipynb} />);
 };
 ```
 

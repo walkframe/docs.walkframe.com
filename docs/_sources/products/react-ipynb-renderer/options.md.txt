@@ -52,25 +52,8 @@ The background color of the code is transparent by default. For this reason, dep
 
 If you pass `bgTransparent={false}`, code background color will get back to highlighting color.
 
-
-## mdiOptions
-
-
-| type   | default  | example                                           |
-|--------|----------|---------------------------------------------------|
-| object | ```{}``` | ```mdiOptions={{ html: true, linkify: true }}```  |
-
-Specify options to pass to markdown-it.
-
-For example, to enable HTML display, specify `html: true`.
-If enabled, it is recommended to enable the appropriate escaping function in htmlFilter to make it vulnerable to XSS attacks.
-
-See below for detailed options.
-
-<a href="https://markdown-it.github.io/markdown-it/#MarkdownIt.new" target="_blank" rel="noreferrer">
-https://markdown-it.github.io/markdown-it/#MarkdownIt.new</a>
-
 ## htmlFilter
+**Since v1.1.x**
 
 | type     | default            | example                                                          |
 |----------|--------------------|------------------------------------------------------------------|
@@ -88,6 +71,7 @@ This function is used by the following.
 - `cell.outputs[n].data["image/svg+xml"]`
 
 ## seqAsExecutionCount
+**Since v1.2.x**
 
 | type    | required   | example                          |
 |---------|------------|----------------------------------|
@@ -95,11 +79,83 @@ This function is used by the following.
 
 If this option is enabled, sequential cell numbers are displayed instead of `cell.execution_count`.
 
-**Since v1.2.x**
 
+## markdownOptions
+**Since v2.0.x**
+
+| type   | default  | example                                                                     |
+|--------|----------|-----------------------------------------------------------------------------|
+| object | ```{}``` | ```markdownOptions={{ remarkMathOptions: {singleDollarTextMath: true }}}``` |
+
+Props to be passed to the markdown component.
+
+This option contains the following keys.
+
+### remarkMath
+
+remark-math extracts mathematical expressions in markdown, 
+but the delimiter used is fixed, so if you want to fix it, extend this function and specify it.
+
+See below for detail.
+
+<a href="https://github.com/remarkjs/remark-math" target="_blank" rel="noreferrer">
+https://github.com/remarkjs/remark-math</a>
+
+### remarkMathOptions
+
+Options to be passed to remarkMath.
+
+See below for detail.
+
+<a href="https://github.com/syntax-tree/mdast-util-math#mathtomarkdownoptions" target="_blank" rel="noreferrer">
+https://github.com/syntax-tree/mdast-util-math#mathtomarkdownoptions</a>
+
+### mathjaxOptions
+**This key is only available with react-ipynb-renderer.**
+
+Options to be passed to mathjax.
+
+See below for detail.
+
+<a href="https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html" target="_blank" rel="noreferrer">
+https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html</a>
+
+The inlineMath and displayMath options do not work if specified; 
+you must specify your own remarkMath.
+
+
+### katexOptions
+**This option is only available with react-ipynb-renderer-katex.**
+
+Options to be passed to katex.
+
+See below for detail.
+
+<a href="https://katex.org/docs/options.html" target="_blank" rel="noreferrer">
+https://katex.org/docs/options.html</a>
+
+
+## mdiOptions
+**Deleted at v2.0.x**
+
+| type   | default  | example                                           |
+|--------|----------|---------------------------------------------------|
+| object | ```{}``` | ```mdiOptions={{ html: true, linkify: true }}```  |
+
+Specify options to pass to markdown-it.
+
+For example, to enable HTML display, specify `html: true`.
+If enabled, it is recommended to enable the appropriate escaping function in htmlFilter to make it vulnerable to XSS attacks.
+
+See below for detailed options.
+
+<a href="https://markdown-it.github.io/markdown-it/#MarkdownIt.new" target="_blank" rel="noreferrer">
+https://markdown-it.github.io/markdown-it/#MarkdownIt.new</a>
 
 # react-ipynb-renderer's options
+
 ## formulaOptions
+**Deleted at v2.0.x**
 
 | type   | default  | example                                               |
 |--------|----------|-------------------------------------------------------|
@@ -110,12 +166,15 @@ You can pass options for this library to `mathjax3`.
 
 See below for detailed options.
 
-- <a href="https://github.com/tani/markdown-it-mathjax3" target="_blank" rel="noreferrer">https://github.com/tani/markdown-it-mathjax3</a>
-- <a href="https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html" target="_blank" rel="noreferrer">https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html</a>
+- <a href="https://github.com/tani/markdown-it-mathjax3" target="_blank" rel="noreferrer">
+  https://github.com/tani/markdown-it-mathjax3</a>
+- <a href="https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html" target="_blank" rel="noreferrer">
+  https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html</a>
 
 
 # react-ipynb-renderer-katex's options
 ## formulaOptions
+**Deleted at v2.0.x**
 
 | type   | default  | example                                               |
 |--------|----------|-------------------------------------------------------|
@@ -128,7 +187,3 @@ See below for detailed options.
 
 <a href="https://github.com/goessner/markdown-it-texmath" target="_blank" rel="noreferrer">
 https://github.com/goessner/markdown-it-texmath</a>
-
-
-
-

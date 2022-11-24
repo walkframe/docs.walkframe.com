@@ -2,6 +2,15 @@
 
 # History
 
+## v2.0.x
+- Use [remark and rehype](https://github.com/remarkjs) instead of markdown-it.
+  - Since the markdown-it plugin cannot handle the display of latex included in markdown,
+    I switched to the remarkjs plugin.
+  - Some options have been consolidated and removed.
+  - The displayMath and inlineMath options are not disabled in this version; 
+    they did not work before.
+- Support error display.
+
 ## v1.2.x
 - SVG support.
   - output.svg and `output.data["image/svg+xml"]` in a cell will be rendered.

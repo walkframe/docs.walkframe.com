@@ -284,33 +284,9 @@
 <p>The background color of the code is transparent by default. For this reason, depending on the combination with jupyter theme, it may be difficult to see the text color.</p>
 <p>If you pass <code class="docutils literal notranslate"><span class="pre">bgTransparent={false}</span></code>, code background color will get back to highlighting color.</p>
 </section>
-<section id="mdioptions">
-<h2>mdiOptions<a class="headerlink" href="#mdioptions" title="Permalink to this heading">#</a></h2>
-<div class="table-wrapper colwidths-auto docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>type</p></th>
-<th class="head"><p>default</p></th>
-<th class="head"><p>example</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>object</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">mdiOptions={{</span> <span class="pre">html:</span> <span class="pre">true,</span> <span class="pre">linkify:</span> <span class="pre">true</span> <span class="pre">}}</span></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Specify options to pass to markdown-it.</p>
-<p>For example, to enable HTML display, specify <code class="docutils literal notranslate"><span class="pre">html:</span> <span class="pre">true</span></code>.
-If enabled, it is recommended to enable the appropriate escaping function in htmlFilter to make it vulnerable to XSS attacks.</p>
-<p>See below for detailed options.</p>
-<a href="https://markdown-it.github.io/markdown-it/#MarkdownIt.new" target="_blank" rel="noreferrer">
-https://markdown-it.github.io/markdown-it/#MarkdownIt.new</a>
-</section>
 <section id="htmlfilter">
 <h2>htmlFilter<a class="headerlink" href="#htmlfilter" title="Permalink to this heading">#</a></h2>
+<p><strong>Since v1.1.x</strong></p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -340,6 +316,7 @@ It is recommended that this option not be changed unless the ipynb to be rendere
 </section>
 <section id="seqasexecutioncount">
 <h2>seqAsExecutionCount<a class="headerlink" href="#seqasexecutioncount" title="Permalink to this heading">#</a></h2>
+<p><strong>Since v1.2.x</strong></p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -357,13 +334,94 @@ It is recommended that this option not be changed unless the ipynb to be rendere
 </table>
 </div>
 <p>If this option is enabled, sequential cell numbers are displayed instead of <code class="docutils literal notranslate"><span class="pre">cell.execution_count</span></code>.</p>
-<p><strong>Since v1.2.x</strong></p>
+</section>
+<section id="markdownoptions">
+<h2>markdownOptions<a class="headerlink" href="#markdownoptions" title="Permalink to this heading">#</a></h2>
+<p><strong>Since v2.0.x</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>default</p></th>
+<th class="head"><p>example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>object</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">markdownOptions={{</span> <span class="pre">remarkMathOptions:</span> <span class="pre">{singleDollarTextMath:</span> <span class="pre">true</span> <span class="pre">}}}</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Props to be passed to the markdown component.</p>
+<p>This option contains the following keys.</p>
+<section id="remarkmath">
+<h3>remarkMath<a class="headerlink" href="#remarkmath" title="Permalink to this heading">#</a></h3>
+<p>remark-math extracts mathematical expressions in markdown,
+but the delimiter used is fixed, so if you want to fix it, extend this function and specify it.</p>
+<p>See below for detail.</p>
+<a href="https://github.com/remarkjs/remark-math" target="_blank" rel="noreferrer">
+https://github.com/remarkjs/remark-math</a>
+</section>
+<section id="remarkmathoptions">
+<h3>remarkMathOptions<a class="headerlink" href="#remarkmathoptions" title="Permalink to this heading">#</a></h3>
+<p>Options to be passed to remarkMath.</p>
+<p>See below for detail.</p>
+<a href="https://github.com/syntax-tree/mdast-util-math#mathtomarkdownoptions" target="_blank" rel="noreferrer">
+https://github.com/syntax-tree/mdast-util-math#mathtomarkdownoptions</a>
+</section>
+<section id="mathjaxoptions">
+<h3>mathjaxOptions<a class="headerlink" href="#mathjaxoptions" title="Permalink to this heading">#</a></h3>
+<p><strong>This key is only available with react-ipynb-renderer.</strong></p>
+<p>Options to be passed to mathjax.</p>
+<p>See below for detail.</p>
+<a href="https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html" target="_blank" rel="noreferrer">
+https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html</a>
+<p>The inlineMath and displayMath options do not work if specified;
+you must specify your own remarkMath.</p>
+</section>
+<section id="katexoptions">
+<h3>katexOptions<a class="headerlink" href="#katexoptions" title="Permalink to this heading">#</a></h3>
+<p><strong>This option is only available with react-ipynb-renderer-katex.</strong></p>
+<p>Options to be passed to katex.</p>
+<p>See below for detail.</p>
+<a href="https://katex.org/docs/options.html" target="_blank" rel="noreferrer">
+https://katex.org/docs/options.html</a>
+</section>
+</section>
+<section id="mdioptions">
+<h2>mdiOptions<a class="headerlink" href="#mdioptions" title="Permalink to this heading">#</a></h2>
+<p><strong>Deleted at v2.0.x</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>default</p></th>
+<th class="head"><p>example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>object</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mdiOptions={{</span> <span class="pre">html:</span> <span class="pre">true,</span> <span class="pre">linkify:</span> <span class="pre">true</span> <span class="pre">}}</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Specify options to pass to markdown-it.</p>
+<p>For example, to enable HTML display, specify <code class="docutils literal notranslate"><span class="pre">html:</span> <span class="pre">true</span></code>.
+If enabled, it is recommended to enable the appropriate escaping function in htmlFilter to make it vulnerable to XSS attacks.</p>
+<p>See below for detailed options.</p>
+<a href="https://markdown-it.github.io/markdown-it/#MarkdownIt.new" target="_blank" rel="noreferrer">
+https://markdown-it.github.io/markdown-it/#MarkdownIt.new</a>
 </section>
 </section>
 <section id="react-ipynb-renderer-s-options">
 <h1>react-ipynb-renderer’s options<a class="headerlink" href="#react-ipynb-renderer-s-options" title="Permalink to this heading">#</a></h1>
 <section id="formulaoptions">
 <h2>formulaOptions<a class="headerlink" href="#formulaoptions" title="Permalink to this heading">#</a></h2>
+<p><strong>Deleted at v2.0.x</strong></p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -383,9 +441,13 @@ It is recommended that this option not be changed unless the ipynb to be rendere
 <p>react-ipynb-renderer uses markdown-it-mathjax3 to draw mathematical expressions.
 You can pass options for this library to <code class="docutils literal notranslate"><span class="pre">mathjax3</span></code>.</p>
 <p>See below for detailed options.</p>
-<ul class="simple">
-<li><p><a href="https://github.com/tani/markdown-it-mathjax3" target="_blank" rel="noreferrer">https://github.com/tani/markdown-it-mathjax3</a></p></li>
-<li><p><a href="https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html" target="_blank" rel="noreferrer">https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html</a></p></li>
+<ul>
+<li><a href="https://github.com/tani/markdown-it-mathjax3" target="_blank" rel="noreferrer">
+https://github.com/tani/markdown-it-mathjax3</a>
+</li>
+<li><a href="https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html" target="_blank" rel="noreferrer">
+https://docs.mathjax.org/en/v3.0-latest/options/input/tex.html</a>
+</li>
 </ul>
 </section>
 </section>
@@ -393,6 +455,7 @@ You can pass options for this library to <code class="docutils literal notransla
 <h1>react-ipynb-renderer-katex’s options<a class="headerlink" href="#react-ipynb-renderer-katex-s-options" title="Permalink to this heading">#</a></h1>
 <section id="id1">
 <h2>formulaOptions<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p><strong>Deleted at v2.0.x</strong></p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -461,9 +524,16 @@ https://github.com/goessner/markdown-it-texmath</a>
 <li><a class="reference internal" href="#syntaxtheme">syntaxTheme</a></li>
 <li><a class="reference internal" href="#language">language</a></li>
 <li><a class="reference internal" href="#bgtransparent">bgTransparent</a></li>
-<li><a class="reference internal" href="#mdioptions">mdiOptions</a></li>
 <li><a class="reference internal" href="#htmlfilter">htmlFilter</a></li>
 <li><a class="reference internal" href="#seqasexecutioncount">seqAsExecutionCount</a></li>
+<li><a class="reference internal" href="#markdownoptions">markdownOptions</a><ul>
+<li><a class="reference internal" href="#remarkmath">remarkMath</a></li>
+<li><a class="reference internal" href="#remarkmathoptions">remarkMathOptions</a></li>
+<li><a class="reference internal" href="#mathjaxoptions">mathjaxOptions</a></li>
+<li><a class="reference internal" href="#katexoptions">katexOptions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mdioptions">mdiOptions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#react-ipynb-renderer-s-options">react-ipynb-renderer’s options</a><ul>

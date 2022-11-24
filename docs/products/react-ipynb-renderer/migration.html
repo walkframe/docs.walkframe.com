@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
     <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>Migrate for v1.0.x - walkframe documentation</title>
+        <title>Migrate for v2.0.x - walkframe documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -189,6 +189,92 @@
         </div>
         <article role="main">
           <p><a href="/products/react-ipynb-renderer">Back to index</a></p>
+<section id="migrate-for-v2-0-x">
+<h1>Migrate for v2.0.x<a class="headerlink" href="#migrate-for-v2-0-x" title="Permalink to this heading">#</a></h1>
+<p>Following options have been integrated to a new option due to changes in the libraries used for markdown rendering.
+Please remove that and move to the new options.</p>
+<ul class="simple">
+<li><p>Delete <code class="docutils literal notranslate"><span class="pre">mdiOptions</span></code> prop.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">mdiOptions</span></code> is unavailable since v2.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mdiOptions.html</span></code> and <code class="docutils literal notranslate"><span class="pre">mdiOptions.linkify</span></code> are always true.</p>
+<ul>
+<li><p>Since purification is enabled by default, invalid script fragments will be disabled.</p>
+<ul>
+<li><p>https://github.com/cure53/DOMPurify</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Delete <code class="docutils literal notranslate"><span class="pre">formulaOptions</span></code> prop.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">formulaOptions</span></code> is unavailable since v2.</p></li>
+<li><p>Specify <code class="docutils literal notranslate"><span class="pre">markdownOptions.mathjaxOptions</span></code> instead of <code class="docutils literal notranslate"><span class="pre">formulaOptions.mathjax3</span></code>. (if you use react-ipynb-renderer)</p></li>
+<li><p>Specify <code class="docutils literal notranslate"><span class="pre">markdownOptions.katexOptions</span></code> instead of <code class="docutils literal notranslate"><span class="pre">formulaOptions.texmath.katexOptions</span></code>. (if you use react-ipynb-renderer-katex)</p></li>
+</ul>
+</li>
+</ul>
+<section id="before">
+<h2>before<a class="headerlink" href="#before" title="Permalink to this heading">#</a></h2>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// Jupyter theme</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// import ipynb file as json</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">IpynbRenderer</span>
+      <span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
+      <span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
+      <span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
+      <span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+      <span class="na">formulaOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// Remove this</span><span class="w"></span>
+<span class="w">        </span><span class="nx">mathjax3</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ams&#39;</span><span class="p">}},</span><span class="w"></span>
+<span class="w">        </span><span class="nx">katexOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">fleqn</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="p">}}</span>
+      <span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// Remove this</span><span class="w"></span>
+<span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">linkify</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="p">}}</span>
+    <span class="p">/&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="after">
+<h2>after<a class="headerlink" href="#after" title="Permalink to this heading">#</a></h2>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// Jupyter theme</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// import ipynb file as json</span><span class="w"></span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">IpynbRenderer</span>
+      <span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
+      <span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
+      <span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
+      <span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+      <span class="na">markdownOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// add options</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// If mathjax3 was specified in react-ipynb-renderer</span><span class="w"></span>
+<span class="w">        </span><span class="nx">mathjaxOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ams&#39;</span><span class="p">}},</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// If texmath was specified in react-ipynb-renderer-katex</span><span class="w"></span>
+<span class="w">        </span><span class="nx">katexOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">fleqn</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="p">}}</span>
+    <span class="p">/&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
 <section id="migrate-for-v1-0-x">
 <h1>Migrate for v1.0.x<a class="headerlink" href="#migrate-for-v1-0-x" title="Permalink to this heading">#</a></h1>
 <section id="if-you-were-using-renderer-mathjax">
@@ -202,8 +288,8 @@
 </li>
 <li><p>formulaOption prop.</p></li>
 </ul>
-<section id="before">
-<h3>before<a class="headerlink" href="#before" title="Permalink to this heading">#</a></h3>
+<section id="id1">
+<h3>before<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// Formula renderer for katex</span><span class="w"></span>
@@ -221,8 +307,8 @@
       <span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
       <span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
       <span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-      <span class="na">formulaOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// Remove this</span><span class="w"></span>
-<span class="w">        </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mathjax&quot;</span><span class="p">,</span><span class="w"></span>
+      <span class="na">formulaOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mathjax&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove this</span><span class="w"></span>
 <span class="w">      </span><span class="p">}}</span>
       <span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
 <span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
@@ -234,8 +320,8 @@
 </pre></div>
 </div>
 </section>
-<section id="after">
-<h3>after<a class="headerlink" href="#after" title="Permalink to this heading">#</a></h3>
+<section id="id2">
+<h3>after<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// Jupyter theme</span><span class="w"></span>
@@ -267,8 +353,8 @@
 <li><p>Rename <code class="docutils literal notranslate"><span class="pre">katex</span></code> to <code class="docutils literal notranslate"><span class="pre">texmath</span></code> in formulaOption.</p></li>
 <li><p>Change import name <code class="docutils literal notranslate"><span class="pre">react-ipynb-render</span></code> to <code class="docutils literal notranslate"><span class="pre">react-ipynb-renderer-katex</span></code>.</p></li>
 </ul>
-<section id="id1">
-<h3>before<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<section id="id3">
+<h3>before<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Change</span><span class="w"></span>
 
 <span class="c1">// Formula renderer for katex</span><span class="w"></span>
@@ -305,8 +391,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id2">
-<h3>after<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="id4">
+<h3>after<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer-katex&quot;</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// Formula renderer for katex</span><span class="w"></span>
@@ -384,15 +470,20 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Migrate for v1.0.x</a><ul>
-<li><a class="reference internal" href="#if-you-were-using-renderer-mathjax">If you were using renderer mathjax</a><ul>
+<li><a class="reference internal" href="#">Migrate for v2.0.x</a><ul>
 <li><a class="reference internal" href="#before">before</a></li>
 <li><a class="reference internal" href="#after">after</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#if-you-were-using-renderer-katex">If you were using renderer katex</a><ul>
+<li><a class="reference internal" href="#migrate-for-v1-0-x">Migrate for v1.0.x</a><ul>
+<li><a class="reference internal" href="#if-you-were-using-renderer-mathjax">If you were using renderer mathjax</a><ul>
 <li><a class="reference internal" href="#id1">before</a></li>
 <li><a class="reference internal" href="#id2">after</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#if-you-were-using-renderer-katex">If you were using renderer katex</a><ul>
+<li><a class="reference internal" href="#id3">before</a></li>
+<li><a class="reference internal" href="#id4">after</a></li>
 </ul>
 </li>
 </ul>
