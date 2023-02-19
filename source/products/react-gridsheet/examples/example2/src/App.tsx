@@ -5,7 +5,7 @@ import {
   oa2aa,
   Renderer,
   MatrixType,
-  generateInitial,
+  generateInitialSimple,
 } from "react-gridsheet";
 import "./App.css";
 
@@ -64,8 +64,8 @@ export default function App() {
 
       {data.length === 0 ? null : (
         <GridSheet
-          initial={generateInitial({
-            matrixes: { A1: data },
+          initial={generateInitialSimple({
+            matrix: data,
             cells: {
               default: {
                 height: 100,

@@ -1,5 +1,17 @@
-import { GridSheet, Parser, matrixIntoCells, CellType } from "react-gridsheet";
+import * as React from "react";
+import { GridSheet, Parser, generateInitialSimple, CellType } from "react-gridsheet";
 import "./App.css";
+
+class ColoringParser extends Parser {
+  public parse(value: string, cell: CellType): CellType {
+    const parsed = this._parse(value, cell);
+    return {
+      ...cell,
+      value: parsed,
+      style: { ...cell.style, backgroundColor: `${parsed}` },
+    };
+  }
+}
 
 export default function App() {
   return (
@@ -18,16 +30,17 @@ export default function App() {
               <h2>Resize: both</h2>
               <GridSheet
                 initial={(() => {
-                  const cells = matrixIntoCells(
-                    Array.from({ length: 256 }, (i, c) =>
+                  const cells = generateInitialSimple({
+                    matrix: Array.from({ length: 256 }, (i, c) =>
                       Array.from(
                         { length: 100 },
                         (j, t) => `rgba(${c},${c},${c},${(100 - t) / 100})`
                       )
                     ),
-                    {}
-                  );
+                    cells: {},
+                  });
                   Object.entries(cells).map(([id, cell]) => {
+
                     cells[id] = {
                       ...cell,
                       style: { backgroundColor: cell.value },
@@ -52,8 +65,8 @@ export default function App() {
               <h2>Resize: vertical</h2>
               <GridSheet
                 initial={(() => {
-                  const cells = matrixIntoCells(
-                    Array.from({ length: 256 }, (i, r) =>
+                  const cells = generateInitialSimple({
+                    matrix: Array.from({ length: 256 }, (i, r) =>
                       Array.from(
                         { length: 256 },
                         (j, g) =>
@@ -64,8 +77,8 @@ export default function App() {
                             .padStart(2, "0")}00`
                       )
                     ),
-                    {}
-                  );
+                    cells: {},
+                  });
                   Object.entries(cells).map(([id, cell]) => {
                     cells[id] = {
                       ...cell,
@@ -93,8 +106,8 @@ export default function App() {
               <h2>Resize: horizontal</h2>
               <GridSheet
                 initial={(() => {
-                  const cells = matrixIntoCells(
-                    Array.from({ length: 256 }, (i, r) =>
+                  const cells = generateInitialSimple({
+                    matrix: Array.from({ length: 256 }, (i, r) =>
                       Array.from(
                         { length: 256 },
                         (j, b) =>
@@ -105,8 +118,8 @@ export default function App() {
                             .padStart(2, "0")}`
                       )
                     ),
-                    {}
-                  );
+                    cells: {},
+                  });
                   Object.entries(cells).map(([id, cell]) => {
                     cells[id] = {
                       ...cell,
@@ -132,8 +145,8 @@ export default function App() {
               <h2>Resize: none</h2>
               <GridSheet
                 initial={(() => {
-                  const cells = matrixIntoCells(
-                    Array.from({ length: 256 }, (i, g) =>
+                  const cells = generateInitialSimple({
+                    matrix: Array.from({ length: 256 }, (i, g) =>
                       Array.from(
                         { length: 256 },
                         (j, b) =>
@@ -144,8 +157,8 @@ export default function App() {
                             .padStart(2, "0")}`
                       )
                     ),
-                    {}
-                  );
+                    cells: {},
+                  });
                   Object.entries(cells).map(([id, cell]) => {
                     cells[id] = {
                       ...cell,
@@ -172,15 +185,4 @@ export default function App() {
       </table>
     </div>
   );
-}
-
-class ColoringParser extends Parser {
-  public parse(value: string, cell: CellType): CellType {
-    const parsed = this._parse(value, cell);
-    return {
-      ...cell,
-      value,
-      style: { ...cell.style, backgroundColor: `${parsed}` },
-    };
-  }
 }

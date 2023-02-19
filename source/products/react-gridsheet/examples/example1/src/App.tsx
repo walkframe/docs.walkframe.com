@@ -14,7 +14,7 @@ export default function App() {
     <div className="App">
       <GridSheet
         initial={generateInitial({
-          matrixes: {
+          matrices: {
             A1: [
               [0, "=A1+60", "=B1+10", "=C1+10", "=D1+10", "=E1+5"],
               ["E", "D", "C", "B", "A", "S"],

@@ -67,7 +67,7 @@ Another example using matrix.
       <GridSheet
         initial={
           generateInitial({
-            matrixes: {
+            matrices: {
               A1: [
                 ["a", 1, true],
                 ["b", 2, false],
@@ -128,8 +128,23 @@ Value of the cell is an object having following keys.
 :label: Header's label instead of Column ID. Only row and column configs work.
 :width: Horizontal header's width. (px)
 :height: Vertical header's height. (px)
-:style: Cell style object. (React.CSSProperties)
-:verticalAlign: This field equals css `vertical-align` property.
+:style:
+
+  - Cell style object. (React.CSSProperties)
+  - When specifying a border, separate it into borderTop, borderLeft, borderBottom, and borderRight.
+    This is to avoid styling bugs in of conflicting property.
+
+:alignItems:
+
+  - Adjusts the position of the content vertically.
+  - `verticalAlign` prop has switched to this property at v0.10.x.
+  - This field equals css `align-items` property.
+
+:justifyContent:
+
+  - Adjusts the position of the content horizontally.
+  - This field equals css `justify-content` property.
+
 :render: Renderer identity. (string)
 :parser: Parser identity. (string)
 :labeler: Labeler identity. (string)

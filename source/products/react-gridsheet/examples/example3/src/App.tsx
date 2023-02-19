@@ -51,7 +51,7 @@ export default function App() {
       <h1>Sloppy data</h1>
       <GridSheet
         initial={generateInitial({
-          matrixes: { A1: initialData },
+          matrices: { A1: initialData },
           cells: {
             default: { height: 100 },
             A: { width: 50, style: { textAlign: "center" } },

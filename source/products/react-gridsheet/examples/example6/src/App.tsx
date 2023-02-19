@@ -26,7 +26,7 @@ export default function App() {
       <GridSheet
         tableRef={tableRef}
         initial={generateInitial({
-          matrixes: {
+          matrices: {
             A1: [
               [undefined, 2, 3, 4, 5],
               [undefined, undefined, 8, 9, 10],

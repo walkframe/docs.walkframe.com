@@ -248,7 +248,7 @@
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">GridSheet</span>
       <span class="na">initial</span><span class="o">=</span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nx">generateInitial</span><span class="p">({</span><span class="w"></span>
-<span class="w">          </span><span class="nx">matrixes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nx">matrices</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="nx">A1</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">              </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">],</span><span class="w"></span>
 <span class="w">              </span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span><span class="w"></span>
@@ -325,19 +325,33 @@
 <dd class="field-even"><p>Vertical header’s height. (px)</p>
 </dd>
 <dt class="field-odd">style<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Cell style object. (React.CSSProperties)</p>
+<dd class="field-odd"><ul class="simple">
+<li><p>Cell style object. (React.CSSProperties)</p></li>
+<li><p>When specifying a border, separate it into borderTop, borderLeft, borderBottom, and borderRight.
+This is to avoid styling bugs in of conflicting property.</p></li>
+</ul>
 </dd>
-<dt class="field-even">verticalAlign<span class="colon">:</span></dt>
-<dd class="field-even"><p>This field equals css <cite>vertical-align</cite> property.</p>
+<dt class="field-even">alignItems<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p>Adjusts the position of the content vertically.</p></li>
+<li><p><cite>verticalAlign</cite> prop has switched to this property at v0.10.x.</p></li>
+<li><p>This field equals css <cite>align-items</cite> property.</p></li>
+</ul>
 </dd>
-<dt class="field-odd">render<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Renderer identity. (string)</p>
+<dt class="field-odd">justifyContent<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>Adjusts the position of the content horizontally.</p></li>
+<li><p>This field equals css <cite>justify-content</cite> property.</p></li>
+</ul>
 </dd>
-<dt class="field-even">parser<span class="colon">:</span></dt>
-<dd class="field-even"><p>Parser identity. (string)</p>
+<dt class="field-even">render<span class="colon">:</span></dt>
+<dd class="field-even"><p>Renderer identity. (string)</p>
 </dd>
-<dt class="field-odd">labeler<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Labeler identity. (string)</p>
+<dt class="field-odd">parser<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Parser identity. (string)</p>
+</dd>
+<dt class="field-even">labeler<span class="colon">:</span></dt>
+<dd class="field-even"><p>Labeler identity. (string)</p>
 </dd>
 </dl>
 </section>
