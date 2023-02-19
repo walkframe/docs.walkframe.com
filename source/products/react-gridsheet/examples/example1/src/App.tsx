@@ -40,7 +40,7 @@ export default function App() {
             1: { style: { backgroundColor: "#ddd" } },
             2: { style: {} },
             3: { style: {} },
-            A: { width: 50 },
+            A: { width: 70 },
             B: { width: 50 },
             C: { width: 50 },
             D: { width: 50 },

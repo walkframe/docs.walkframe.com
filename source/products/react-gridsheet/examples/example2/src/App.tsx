@@ -73,17 +73,19 @@ export default function App() {
               A: {
                 labeler: "id",
                 width: 80,
-                style: { textAlign: "right" },
                 renderer: "id",
+                justifyContent: "right",
+                alignItems: "center",
               },
-              B: { labeler: "avatar", renderer: "image" },
-              C: { labeler: "user", width: 150 },
+              B: { labeler: "avatar", renderer: "image", alignItems: "center" },
+              C: { labeler: "user", width: 150, alignItems: "center" },
               D: {
                 labeler: "url",
                 width: 300,
                 renderer: "link",
+                alignItems: "center",
               },
-              E: { labeler: "contributions", style: { textAlign: "right" } },
+              E: { labeler: "contributions", style: { textAlign: "right" }, alignItems: "center", justifyContent: "center", },
             },
           })}
           options={{
