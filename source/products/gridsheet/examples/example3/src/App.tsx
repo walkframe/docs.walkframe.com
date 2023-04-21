@@ -28,7 +28,7 @@ const ListRendererMixin: RendererMixinType = {
 }
 
 const ListParserMixin: ParserMixinType = {
-  parseFunctions: [
+  functions: [
     (value: string) => value.split(/\n/g),
   ],
 }
@@ -52,7 +52,7 @@ export default function App() {
           matrices: { A1: initialData },
           cells: {
             default: { height: 100 },
-            A: { width: 50, style: { textAlign: "center" } },
+            A: { width: 50, style: { textAlign: "center" }, renderer: "checkbox" },
             C: { width: 200 },
             D: { width: 400, renderer: "list", parser: "list" },
           },
@@ -63,7 +63,8 @@ export default function App() {
           sheetHeight: 600,
 
           renderers: {
-            list: new Renderer({mixins: [ListRendererMixin, CheckboxRendererMixin]}),
+            checkbox: new Renderer({mixins: [CheckboxRendererMixin]}),
+            list: new Renderer({mixins: [ListRendererMixin]}),
           },
           parsers: {
             list: new Parser({mixins: [ListParserMixin]}),
