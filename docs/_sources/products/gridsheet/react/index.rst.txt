@@ -153,16 +153,17 @@ We can access to table through it.
 
 Example of writing "test" in cell A1.
 
-```js
-export default function App() {
-  const tableRef = createTableRef();
-  React.useEffect(() => {
-    const { dispatch, table } = tableRef.current;
-    dispatch(table.write({point: {x: 1, y: 1}, value: "test"});
-  }, [something]);
-  // ...
-};
-```
+.. code-block:: jsx
+
+  export default function App() {
+    const tableRef = createTableRef();
+    React.useEffect(() => {
+      const { dispatch, table } = tableRef.current;
+      dispatch(table.write({point: {x: 1, y: 1}, value: "test"});
+    }, [something]);
+    // ...
+  };
+
 
 
 options prop
