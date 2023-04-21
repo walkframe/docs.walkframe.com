@@ -6,20 +6,20 @@
 Products
 ==============
 
-react-gridsheet
+gridsheet
 --------------
 
 .. list-table::
   :stub-columns: 1
 
   * - Document:
-    - `react-gridsheet </products/react-gridsheet/>`__
+    - `gridsheet </products/gridsheet/>`__
   * - Description:
-    - Spreadsheet component for ReactJS.
+    - Spreadsheet component.
   * - Uses:
     - TypeScript, React
   * - GitHub:
-    - https://github.com/walkframe/react-gridsheet
+    - https://github.com/walkframe/gridsheet
 
 react-ipynb-renderer
 --------------
