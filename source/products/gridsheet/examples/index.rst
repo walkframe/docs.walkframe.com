@@ -9,7 +9,7 @@ Here are `gridsheet <https://www.npmjs.com/package/@gridsheet/react-core>`__ exa
 .. note::
 
   - `GitHub <https://github.com/walkframe/gridsheet>`__
-  - `Document </products/gridsheet/>`__
+  - `Document </products/gridsheet/react/>`__
 
 Example1 - Simple example with formula
 -----------------------------------------

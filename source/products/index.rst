@@ -13,7 +13,7 @@ gridsheet
   :stub-columns: 1
 
   * - Document:
-    - `gridsheet </products/gridsheet/>`__
+    - `gridsheet </products/gridsheet/react/>`__
   * - Description:
     - Spreadsheet component.
   * - Uses:
