@@ -52,7 +52,7 @@ export default function App() {
           matrices: { A1: initialData },
           cells: {
             default: { height: 100 },
-            A: { width: 50, style: { textAlign: "center" }, renderer: "checkbox" },
+            A: { width: 50, renderer: "checkbox", alignItems: "center", justifyContent: "center" },
             C: { width: 200 },
             D: { width: 400, renderer: "list", parser: "list" },
           },
