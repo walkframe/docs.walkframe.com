@@ -41,7 +41,11 @@ You can select one of [prism](https://github.com/react-syntax-highlighter/react-
 
 If you do not want to style the notebook yourself, you can use one of the following themes.
 
+- default
 - chesterish
+- dark
+- darkbronco
+- dorkula
 - grade3
 - gruvboxd
 - gruvboxl

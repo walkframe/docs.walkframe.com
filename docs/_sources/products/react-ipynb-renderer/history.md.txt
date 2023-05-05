@@ -2,6 +2,16 @@
 
 # History
 
+## v2.1.x
+- Add jupyter themes.
+  - default
+  - dark
+  - darkbronco
+  - dorkula
+
+- Double-click to select all source code.
+- Cells without outputs are not displayed.
+
 ## v2.0.x
 - Use [remark and rehype](https://github.com/remarkjs) instead of markdown-it.
   - Since the markdown-it plugin cannot handle the display of latex included in markdown,
