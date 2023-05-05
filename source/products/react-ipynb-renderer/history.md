@@ -9,7 +9,7 @@
   - darkbronco
   - dorkula
 
-- Double-click to select all source code.
+- Double-click to select entire source code.
 - Cells without outputs are not displayed.
 
 ## v2.0.x
