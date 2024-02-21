@@ -30,7 +30,7 @@ export default function App() {
             <td>
               <h2>Resize: both</h2>
               <GridSheet
-                initial={(() => {
+                initialCells={(() => {
                   const cells = generateInitialSimple({
                     matrix: Array.from({ length: 256 }, (i, c) =>
                       Array.from(
@@ -65,7 +65,7 @@ export default function App() {
             <td>
               <h2>Resize: vertical</h2>
               <GridSheet
-                initial={(() => {
+                initialCells={(() => {
                   const cells = generateInitialSimple({
                     matrix: Array.from({ length: 256 }, (i, r) =>
                       Array.from(
@@ -106,7 +106,7 @@ export default function App() {
             <td>
               <h2>Resize: horizontal</h2>
               <GridSheet
-                initial={(() => {
+                initialCells={(() => {
                   const cells = generateInitialSimple({
                     matrix: Array.from({ length: 256 }, (i, r) =>
                       Array.from(
@@ -145,7 +145,7 @@ export default function App() {
             <td>
               <h2>Resize: none</h2>
               <GridSheet
-                initial={(() => {
+                initialCells={(() => {
                   const cells = generateInitialSimple({
                     matrix: Array.from({ length: 256 }, (i, g) =>
                       Array.from(

@@ -216,34 +216,34 @@ react-ipynb-renderer-katex is more lightweight, but some syntax is not supported
 <h1>Code example<a class="headerlink" href="#code-example" title="Permalink to this heading">#</a></h1>
 <section id="using-react-ipynb-renderer">
 <h2>Using react-ipynb-renderer<a class="headerlink" href="#using-react-ipynb-renderer" title="Permalink to this heading">#</a></h2>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span>
 
-<span class="c1">// Jupyter theme</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="c1">// import ipynb file as json</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Jupyter theme</span>
+<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span>
+<span class="c1">// import ipynb file as json</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;</span><span class="nt">IpynbRenderer</span> <span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span> <span class="p">/&gt;);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="nx">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">);</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </section>
 <section id="using-react-ipynb-renderer-katex">
 <h2>Using react-ipynb-renderer-katex<a class="headerlink" href="#using-react-ipynb-renderer-katex" title="Permalink to this heading">#</a></h2>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer-katex&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer-katex&quot;</span><span class="p">;</span>
 
-<span class="c1">// Formula renderer for katex</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;katex/dist/katex.min.css&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Formula renderer for katex</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;katex/dist/katex.min.css&#39;</span><span class="p">;</span>
 
-<span class="c1">// Jupyter theme</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer-katex/dist/styles/monokai.css&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="c1">// import ipynb file as json</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Jupyter theme</span>
+<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer-katex/dist/styles/monokai.css&quot;</span><span class="p">;</span>
+<span class="c1">// import ipynb file as json</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;</span><span class="nt">IpynbRenderer</span> <span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span> <span class="p">/&gt;);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="nx">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">);</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </section>

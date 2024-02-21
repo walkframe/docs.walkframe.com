@@ -202,73 +202,73 @@
 </div>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ npm install @gridsheet/react-core --save
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span>@gridsheet/react-core<span class="w"> </span>--save
 </pre></div>
 </div>
 </section>
 <section id="how-to-use">
 <h2>How to use<a class="headerlink" href="#how-to-use" title="Permalink to this heading">#</a></h2>
 <p>Simple example.</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GridSheet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@gridsheet/react-core&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GridSheet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@gridsheet/react-core&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">GridSheet</span>
-      <span class="na">initial</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
-<span class="w">        </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">fontStyle</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;italic&quot;</span><span class="w"> </span><span class="p">}},</span><span class="w"></span>
-<span class="w">        </span><span class="nx">A</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#ddf&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="mf">3</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nx">A1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#00f&quot;</span><span class="p">}},</span><span class="w"></span>
-<span class="w">        </span><span class="nx">B1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nx">C1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nx">A2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nx">B2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nx">C2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nx">B1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="na">initial</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">fontStyle</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;italic&quot;</span><span class="w"> </span><span class="p">}},</span>
+<span class="w">        </span><span class="nx">A</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#ddf&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">},</span>
+<span class="w">        </span><span class="mf">3</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">},</span>
+<span class="w">        </span><span class="nx">A1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#00f&quot;</span><span class="p">}},</span>
+<span class="w">        </span><span class="nx">B1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">},</span>
+<span class="w">        </span><span class="nx">C1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">},</span>
+<span class="w">        </span><span class="nx">A2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">},</span>
+<span class="w">        </span><span class="nx">B2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">},</span>
+<span class="w">        </span><span class="nx">C2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">},</span>
+<span class="w">        </span><span class="nx">B1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">},</span>
 <span class="w">      </span><span class="p">}}</span>
-      <span class="na">options</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// Optional</span><span class="w"></span>
+<span class="w">      </span><span class="na">options</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// Optional</span>
 <span class="w">      </span><span class="p">}}</span>
-      <span class="na">className</span><span class="o">=</span><span class="s">&quot;some-class&quot;</span>
-      <span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">maxWidth</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;100%&quot;</span><span class="w"> </span><span class="p">}}</span>
-    <span class="p">/&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;some-class&quot;</span>
+<span class="w">      </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">maxWidth</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;100%&quot;</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">    </span><span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Another example using matrix.</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GridSheet</span><span class="p">,</span><span class="w"> </span><span class="nx">generateInitial</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@gridsheet/react-core&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GridSheet</span><span class="p">,</span><span class="w"> </span><span class="nx">generateInitial</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@gridsheet/react-core&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">GridSheet</span>
-      <span class="na">initial</span><span class="o">=</span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">generateInitial</span><span class="p">({</span><span class="w"></span>
-<span class="w">          </span><span class="nx">matrices</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">A1</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">              </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">],</span><span class="w"></span>
-<span class="w">              </span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span><span class="w"></span>
-<span class="w">              </span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">],</span><span class="w"></span>
-<span class="w">            </span><span class="p">],</span><span class="w"></span>
-<span class="w">          </span><span class="p">}</span><span class="w"></span>
-<span class="w">          </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">A1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#50f&quot;</span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="p">},</span><span class="w"></span>
-<span class="w">            </span><span class="nx">B3</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">33</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="p">},</span><span class="w"></span>
-<span class="w">          </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="p">})</span><span class="w"></span>
+<span class="w">      </span><span class="na">initial</span><span class="o">=</span><span class="p">{</span>
+<span class="w">        </span><span class="nx">generateInitial</span><span class="p">({</span>
+<span class="w">          </span><span class="nx">matrices</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">A1</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">],</span>
+<span class="w">              </span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span>
+<span class="w">              </span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">],</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">          </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">A1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#50f&quot;</span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">B3</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">33</span><span class="p">,</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">})</span>
 <span class="w">      </span><span class="p">}</span>
-      <span class="na">options</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// Optional</span><span class="w"></span>
+<span class="w">      </span><span class="na">options</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// Optional</span>
 <span class="w">      </span><span class="p">}}</span>
-      <span class="na">className</span><span class="o">=</span><span class="s">&quot;some-class&quot;</span>
-      <span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">maxWidth</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;100%&quot;</span><span class="w"> </span><span class="p">}}</span>
-    <span class="p">/&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="na">className</span><span class="o">=</span><span class="s">&quot;some-class&quot;</span>
+<span class="w">      </span><span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">maxWidth</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;100%&quot;</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">    </span><span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -357,14 +357,14 @@ This is to avoid styling bugs in of conflicting property.</p></li>
 <p><code class="docutils literal notranslate"><span class="pre">tableRef</span></code> can be created by <cite>createTableRef()</cite>.</p>
 <p>We can access to table through it.</p>
 <p>Example of writing “test” in cell A1.</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tableRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createTableRef</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="nx">React</span><span class="p">.</span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">,</span><span class="w"> </span><span class="nx">table</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tableRef</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">table</span><span class="p">.</span><span class="nx">write</span><span class="p">({</span><span class="nx">point</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">},</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="p">});</span><span class="w"></span>
-<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">something</span><span class="p">]);</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// ...</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tableRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createTableRef</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">React</span><span class="p">.</span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">,</span><span class="w"> </span><span class="nx">table</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tableRef</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">table</span><span class="p">.</span><span class="nx">write</span><span class="p">({</span><span class="nx">point</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">},</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="p">});</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">something</span><span class="p">]);</span>
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </section>
@@ -473,40 +473,40 @@ This is to avoid styling bugs in of conflicting property.</p></li>
 <li><p>To use a Renderer mixin, specify its Mixin object in the mixins props when creating the Renderer instance.
 Specify the Renderer instance as an object in <cite>options.renderers</cite>. The key is the identifier of the Renderer. This identifier is specified as the renderer key of <cite>cell</cite>.</p></li>
 </ul>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">GridSheet</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Renderer</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">RendererMixinType</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">CheckboxRendererMixin</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@gridsheet/react-core&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">GridSheet</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">Renderer</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">RendererMixinType</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">CheckboxRendererMixin</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@gridsheet/react-core&quot;</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">QuoteRendererMixin</span><span class="o">:</span><span class="w"> </span><span class="nx">RendererMixinType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">string</span><span class="p">(</span><span class="nx">cell</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`&quot;</span><span class="si">${</span><span class="nx">cell</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">&quot;`</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="nx">stringify</span><span class="p">(</span><span class="nx">cell</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">cell</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">QuoteRendererMixin</span><span class="o">:</span><span class="w"> </span><span class="nx">RendererMixinType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">string</span><span class="p">(</span><span class="nx">cell</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`&quot;</span><span class="si">${</span><span class="nx">cell</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb">&quot;`</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">stringify</span><span class="p">(</span><span class="nx">cell</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">cell</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;</span><span class="nt">GridSheet</span>
-    <span class="na">data</span><span class="o">=</span><span class="p">{[</span><span class="w"> </span><span class="c1">// any[][]</span><span class="w"></span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">],</span><span class="w"></span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span><span class="w"></span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="na">data</span><span class="o">=</span><span class="p">{[</span><span class="w"> </span><span class="c1">// any[][]</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">],</span>
 <span class="w">    </span><span class="p">]}</span>
-    <span class="na">options</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
-<span class="w">      </span><span class="nx">renderers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">quote</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Renderer</span><span class="p">({</span><span class="nx">mixins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">QuoteRendererMixin</span><span class="p">,</span><span class="w"> </span><span class="nx">CheckboxRendererMixin</span><span class="p">]}),</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">A</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;quote&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="na">options</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">      </span><span class="nx">renderers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">quote</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Renderer</span><span class="p">({</span><span class="nx">mixins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">QuoteRendererMixin</span><span class="p">,</span><span class="w"> </span><span class="nx">CheckboxRendererMixin</span><span class="p">]}),</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">A</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;quote&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">},</span>
 <span class="w">    </span><span class="p">}}</span>
-  <span class="p">/&gt;)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">/&gt;)</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </dd>
@@ -535,35 +535,35 @@ The parsing method to be called depends on parseFunctions.</p></li>
 <li><p>To use the parser, you have to specify the parser’s identity to <code class="docutils literal notranslate"><span class="pre">options.cells[column].parser</span></code>.</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">{}</span></code></p></li>
 </ul>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">GridSheet</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">Parser</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@gridsheet/react-core&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">GridSheet</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">Parser</span><span class="p">,</span>
+<span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@gridsheet/react-core&quot;</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">EvalParserMixin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">parseFunctions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="nb">eval</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="p">];</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">EvalParserMixin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">parseFunctions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="nb">eval</span><span class="p">,</span>
+<span class="w">  </span><span class="p">];</span>
+<span class="p">}</span>
 
-<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;</span><span class="nt">GridSheet</span>
-    <span class="na">data</span><span class="o">=</span><span class="p">{[</span><span class="w"> </span><span class="c1">// any[][]</span><span class="w"></span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">],</span><span class="w"></span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span><span class="w"></span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="na">data</span><span class="o">=</span><span class="p">{[</span><span class="w"> </span><span class="c1">// any[][]</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span>
+<span class="w">      </span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">],</span>
 <span class="w">    </span><span class="p">]}</span>
-    <span class="na">options</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
-<span class="w">      </span><span class="nx">parsers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nb">eval</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Parser</span><span class="p">({</span><span class="nx">mixins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">EvalParserMixin</span><span class="p">]}),</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">C</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">parser</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;eval&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
-<span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="na">options</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">      </span><span class="nx">parsers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">eval</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Parser</span><span class="p">({</span><span class="nx">mixins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">EvalParserMixin</span><span class="p">]}),</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">cells</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">C</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">parser</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;eval&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">},</span>
 <span class="w">    </span><span class="p">}}</span>
-  <span class="p">/&gt;)</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">/&gt;)</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </dd>

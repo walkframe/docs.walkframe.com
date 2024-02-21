@@ -59,7 +59,7 @@ export default function App() {
 
       {data.length === 0 ? null : (
         <GridSheet
-          initial={generateInitialSimple({
+          initialCells={generateInitialSimple({
             matrix: data,
             cells: {
               default: {

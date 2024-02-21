@@ -218,59 +218,59 @@ Please remove that and move to the new options.</p>
 </ul>
 <section id="before">
 <h2>before<a class="headerlink" href="#before" title="Permalink to this heading">#</a></h2>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span>
 
-<span class="c1">// Jupyter theme</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="c1">// import ipynb file as json</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Jupyter theme</span>
+<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span>
+<span class="c1">// import ipynb file as json</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">IpynbRenderer</span>
-      <span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
-      <span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
-      <span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
-      <span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-      <span class="na">formulaOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// Remove this</span><span class="w"></span>
-<span class="w">        </span><span class="nx">mathjax3</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ams&#39;</span><span class="p">}},</span><span class="w"></span>
-<span class="w">        </span><span class="nx">katexOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">fleqn</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
+<span class="w">      </span><span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
+<span class="w">      </span><span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
+<span class="w">      </span><span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">      </span><span class="na">formulaOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// Remove this</span>
+<span class="w">        </span><span class="nx">mathjax3</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ams&#39;</span><span class="p">}},</span>
+<span class="w">        </span><span class="nx">katexOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">fleqn</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">},</span>
 <span class="w">      </span><span class="p">}}</span>
-      <span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// Remove this</span><span class="w"></span>
-<span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">linkify</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// Remove this</span>
+<span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">linkify</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">      </span><span class="p">}}</span>
-    <span class="p">/&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </section>
 <section id="after">
 <h2>after<a class="headerlink" href="#after" title="Permalink to this heading">#</a></h2>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span>
 
-<span class="c1">// Jupyter theme</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="c1">// import ipynb file as json</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Jupyter theme</span>
+<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span>
+<span class="c1">// import ipynb file as json</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">IpynbRenderer</span>
-      <span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
-      <span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
-      <span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
-      <span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-      <span class="na">markdownOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// add options</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// If mathjax3 was specified in react-ipynb-renderer</span><span class="w"></span>
-<span class="w">        </span><span class="nx">mathjaxOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ams&#39;</span><span class="p">}},</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// If texmath was specified in react-ipynb-renderer-katex</span><span class="w"></span>
-<span class="w">        </span><span class="nx">katexOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">fleqn</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">},</span><span class="w"></span>
+<span class="w">      </span><span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
+<span class="w">      </span><span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
+<span class="w">      </span><span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
+<span class="w">      </span><span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">      </span><span class="na">markdownOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="c1">// add options</span>
+<span class="w">        </span><span class="c1">// If mathjax3 was specified in react-ipynb-renderer</span>
+<span class="w">        </span><span class="nx">mathjaxOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ams&#39;</span><span class="p">}},</span>
+<span class="w">        </span><span class="c1">// If texmath was specified in react-ipynb-renderer-katex</span>
+<span class="w">        </span><span class="nx">katexOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">fleqn</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">},</span>
 <span class="w">      </span><span class="p">}}</span>
-    <span class="p">/&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </section>
@@ -290,59 +290,59 @@ Please remove that and move to the new options.</p>
 </ul>
 <section id="id1">
 <h3>before<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span>
 
-<span class="c1">// Formula renderer for katex</span><span class="w"></span>
-<span class="c1">// import &#39;katex/dist/katex.min.css&#39;; // Remove this</span><span class="w"></span>
+<span class="c1">// Formula renderer for katex</span>
+<span class="c1">// import &#39;katex/dist/katex.min.css&#39;; // Remove this</span>
 
-<span class="c1">// Jupyter theme</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="c1">// import ipynb file as json</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Jupyter theme</span>
+<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span>
+<span class="c1">// import ipynb file as json</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;&gt;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;&gt;</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">IpynbRenderer</span>
-      <span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
-      <span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
-      <span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
-      <span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-      <span class="na">formulaOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mathjax&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove this</span><span class="w"></span>
+<span class="w">      </span><span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
+<span class="w">      </span><span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
+<span class="w">      </span><span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
+<span class="w">      </span><span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">      </span><span class="na">formulaOptions</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mathjax&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove this</span>
 <span class="w">      </span><span class="p">}}</span>
-      <span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">linkify</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">linkify</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">      </span><span class="p">}}</span>
-    <span class="p">/&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="p">&lt;/&gt;);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">&lt;/&gt;);</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </section>
 <section id="id2">
 <h3>after<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span>
 
-<span class="c1">// Jupyter theme</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="c1">// import ipynb file as json</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Jupyter theme</span>
+<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span>
+<span class="c1">// import ipynb file as json</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;&gt;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;&gt;</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">IpynbRenderer</span>
-      <span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
-      <span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
-      <span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
-      <span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-      <span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">linkify</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
+<span class="w">      </span><span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
+<span class="w">      </span><span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
+<span class="w">      </span><span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">      </span><span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">linkify</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">      </span><span class="p">}}</span>
-    <span class="p">/&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="p">&lt;/&gt;);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">&lt;/&gt;);</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </section>
@@ -355,76 +355,76 @@ Please remove that and move to the new options.</p>
 </ul>
 <section id="id3">
 <h3>before<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Change</span><span class="w"></span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Change</span>
 
-<span class="c1">// Formula renderer for katex</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;katex/dist/katex.min.css&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Formula renderer for katex</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;katex/dist/katex.min.css&#39;</span><span class="p">;</span>
 
-<span class="c1">// Jupyter theme</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Change</span><span class="w"></span>
-<span class="c1">// import ipynb file as json</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Jupyter theme</span>
+<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer/dist/styles/monokai.css&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// Change</span>
+<span class="c1">// import ipynb file as json</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;&gt;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;&gt;</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">IpynbRenderer</span>
-      <span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
-      <span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
-      <span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
-      <span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-      <span class="na">formulaOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;katex&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove this</span><span class="w"></span>
-<span class="w">        </span><span class="nx">katex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Rename this to texmath</span><span class="w"></span>
-<span class="w">          </span><span class="nx">delimiters</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gitlab&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nx">katexOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">fleqn</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
+<span class="w">      </span><span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
+<span class="w">      </span><span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
+<span class="w">      </span><span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">      </span><span class="na">formulaOptions</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;katex&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Remove this</span>
+<span class="w">        </span><span class="nx">katex</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Rename this to texmath</span>
+<span class="w">          </span><span class="nx">delimiters</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gitlab&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">katexOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">fleqn</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}}</span>
-      <span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">linkify</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">linkify</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">      </span><span class="p">}}</span>
-    <span class="p">/&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="p">&lt;/&gt;);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">&lt;/&gt;);</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </section>
 <section id="id4">
 <h3>after<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer-katex&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">IpynbRenderer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer-katex&quot;</span><span class="p">;</span>
 
-<span class="c1">// Formula renderer for katex</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;katex/dist/katex.min.css&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Formula renderer for katex</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;katex/dist/katex.min.css&#39;</span><span class="p">;</span>
 
-<span class="c1">// Jupyter theme</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer-katex/dist/styles/monokai.css&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="c1">// import ipynb file as json</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Jupyter theme</span>
+<span class="k">import</span><span class="w"> </span><span class="s2">&quot;react-ipynb-renderer-katex/dist/styles/monokai.css&quot;</span><span class="p">;</span>
+<span class="c1">// import ipynb file as json</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ipynb</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./test.ipynb&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;&gt;</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;&gt;</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">IpynbRenderer</span>
-      <span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
-      <span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
-      <span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
-      <span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-      <span class="na">formulaOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">texmath</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="nx">delimiters</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gitlab&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nx">katexOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">fleqn</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="na">ipynb</span><span class="o">=</span><span class="p">{</span><span class="nx">ipynb</span><span class="p">}</span>
+<span class="w">      </span><span class="na">syntaxTheme</span><span class="o">=</span><span class="s">&quot;xonokai&quot;</span>
+<span class="w">      </span><span class="na">language</span><span class="o">=</span><span class="s">&quot;python&quot;</span>
+<span class="w">      </span><span class="na">bgTransparent</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+<span class="w">      </span><span class="na">formulaOptions</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="nx">texmath</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">delimiters</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gitlab&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">katexOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">fleqn</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">}}</span>
-      <span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">linkify</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="na">mdiOptions</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="nx">html</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">linkify</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">      </span><span class="p">}}</span>
-    <span class="p">/&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="p">&lt;/&gt;);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">&lt;/&gt;);</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </section>

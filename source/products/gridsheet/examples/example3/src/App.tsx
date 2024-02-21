@@ -48,7 +48,7 @@ export default function App() {
     <div className="App">
       <h1>Sloppy data</h1>
       <GridSheet
-        initial={generateInitial({
+        initialCells={generateInitial({
           matrices: { A1: initialData },
           cells: {
             default: { height: 100 },
