@@ -1,5 +1,5 @@
 import * as React from "react";
-import { GridSheet, generateInitial, createTableRef } from "@gridsheet/react-core";
+import { GridSheet, constructInitialCells, createTableRef } from "@gridsheet/react-core";
 import "./index.css";
 
 export default function App() {
@@ -25,7 +25,7 @@ export default function App() {
       <h2>See console log</h2>
       <GridSheet
         tableRef={tableRef}
-        initialCells={generateInitial({
+        initialCells={constructInitialCells({
           matrices: {
             A1: [
               [undefined, 2, 3, 4, 5],

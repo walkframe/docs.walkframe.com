@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@gridsheet/react-core": "^1.0.0-alpha.1",
+    "@gridsheet/react-core": "^1.0.0",
     "@octokit/core": "^3.2.5",
     "@octokit/request": "^5.4.14",
     "@testing-library/jest-dom": "^5.11.9",

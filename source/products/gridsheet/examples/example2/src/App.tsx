@@ -6,7 +6,7 @@ import {
   Renderer,
   RendererMixinType,
   MatrixType,
-  generateInitialSimple, ThousandSeparatorRendererMixin,
+  constructInitialCellsOrigin, ThousandSeparatorRendererMixin,
 } from "@gridsheet/react-core";
 import "./App.css";
 
@@ -59,7 +59,7 @@ export default function App() {
 
       {data.length === 0 ? null : (
         <GridSheet
-          initialCells={generateInitialSimple({
+          initialCells={constructInitialCellsOrigin({
             matrix: data,
             cells: {
               default: {

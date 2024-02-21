@@ -1,5 +1,5 @@
 import * as React from "react";
-import {GridSheet, Parser, generateInitialSimple, CellType, ParserMixinType} from "@gridsheet/react-core";
+import {GridSheet, Parser, constructInitialCellsOrigin, CellType, ParserMixinType} from "@gridsheet/react-core";
 import "./App.css";
 
 const ColoringParserMixin: ParserMixinType = {
@@ -31,7 +31,7 @@ export default function App() {
               <h2>Resize: both</h2>
               <GridSheet
                 initialCells={(() => {
-                  const cells = generateInitialSimple({
+                  const cells = constructInitialCellsOrigin({
                     matrix: Array.from({ length: 256 }, (i, c) =>
                       Array.from(
                         { length: 100 },
@@ -66,7 +66,7 @@ export default function App() {
               <h2>Resize: vertical</h2>
               <GridSheet
                 initialCells={(() => {
-                  const cells = generateInitialSimple({
+                  const cells = constructInitialCellsOrigin({
                     matrix: Array.from({ length: 256 }, (i, r) =>
                       Array.from(
                         { length: 256 },
@@ -107,7 +107,7 @@ export default function App() {
               <h2>Resize: horizontal</h2>
               <GridSheet
                 initialCells={(() => {
-                  const cells = generateInitialSimple({
+                  const cells = constructInitialCellsOrigin({
                     matrix: Array.from({ length: 256 }, (i, r) =>
                       Array.from(
                         { length: 256 },
@@ -146,7 +146,7 @@ export default function App() {
               <h2>Resize: none</h2>
               <GridSheet
                 initialCells={(() => {
-                  const cells = generateInitialSimple({
+                  const cells = constructInitialCellsOrigin({
                     matrix: Array.from({ length: 256 }, (i, g) =>
                       Array.from(
                         { length: 256 },

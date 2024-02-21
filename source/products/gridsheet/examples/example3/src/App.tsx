@@ -4,7 +4,7 @@ import {
   Renderer,
   Parser,
   MatrixType,
-  generateInitial,
+  constructInitialCells,
   aa2oa, RendererMixinType, ParserMixinType, CheckboxRendererMixin,
 } from "@gridsheet/react-core";
 import "./App.css";
@@ -48,7 +48,7 @@ export default function App() {
     <div className="App">
       <h1>Sloppy data</h1>
       <GridSheet
-        initialCells={generateInitial({
+        initialCells={constructInitialCells({
           matrices: { A1: initialData },
           cells: {
             default: { height: 100 },
