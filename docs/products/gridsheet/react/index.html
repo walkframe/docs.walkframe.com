@@ -215,7 +215,7 @@
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">GridSheet</span>
-<span class="w">      </span><span class="na">initial</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">      </span><span class="na">initialCells</span><span class="o">=</span><span class="p">{{</span>
 <span class="w">        </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">fontStyle</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;italic&quot;</span><span class="w"> </span><span class="p">}},</span>
 <span class="w">        </span><span class="nx">A</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#ddf&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">},</span>
 <span class="w">        </span><span class="mf">3</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">},</span>
@@ -238,13 +238,13 @@
 </div>
 <p>Another example using matrix.</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GridSheet</span><span class="p">,</span><span class="w"> </span><span class="nx">generateInitial</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@gridsheet/react-core&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">GridSheet</span><span class="p">,</span><span class="w"> </span><span class="nx">constructInitialCells</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@gridsheet/react-core&quot;</span><span class="p">;</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">GridSheet</span>
-<span class="w">      </span><span class="na">initial</span><span class="o">=</span><span class="p">{</span>
-<span class="w">        </span><span class="nx">generateInitial</span><span class="p">({</span>
+<span class="w">      </span><span class="na">initialCells</span><span class="o">=</span><span class="p">{</span>
+<span class="w">        </span><span class="nx">constructInitialCells</span><span class="p">({</span>
 <span class="w">          </span><span class="nx">matrices</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nx">A1</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">              </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">],</span>
@@ -276,8 +276,8 @@
 <p>More examples are <a class="reference external" href="/products/gridsheet/examples">here</a>.</p>
 </div>
 </section>
-<section id="initial-prop">
-<h2>initial prop<a class="headerlink" href="#initial-prop" title="Permalink to this heading">#</a></h2>
+<section id="initialcells-prop">
+<h2>initialCells prop<a class="headerlink" href="#initialcells-prop" title="Permalink to this heading">#</a></h2>
 <p>This prop affects the cells matching the keys.</p>
 <p>Key rules:</p>
 <ul class="simple">
@@ -308,7 +308,7 @@
 </li>
 </ul>
 <p>Value of the cell is an object having following keys.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">value<span class="colon">:</span></dt>
 <dd class="field-odd"><p>cell value.</p>
 </dd>
@@ -349,6 +349,37 @@ This is to avoid styling bugs in of conflicting property.</p></li>
 </dd>
 <dt class="field-even">labeler<span class="colon">:</span></dt>
 <dd class="field-even"><p>Labeler identity. (string)</p>
+</dd>
+<dt class="field-odd">prevention<span class="colon">:</span></dt>
+<dd class="field-odd"><ul>
+<li><p>Prevents operations from changing the cell.
+- Add</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>AddRow
+- AddRowAbove
+- AddRowBelow</p></li>
+<li><p>AddCol
+- AddColLeft
+- AddColRight</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Delete
+- DeleteRow
+- DeleteCol</p></li>
+<li><p>Move
+- MoveFrom
+- MoveTo</p></li>
+<li><p>Update
+- Write
+- Style
+- Resize
+- SetRenderer
+- SetParser</p></li>
+</ul>
+</li>
+</ul>
 </dd>
 </dl>
 </section>
@@ -449,6 +480,18 @@ This is to avoid styling bugs in of conflicting property.</p></li>
 <li><p>default: <code class="docutils literal notranslate"><span class="pre">&quot;light&quot;</span></code></p></li>
 </ul>
 </dd>
+<dt class="field-odd">options.showAddress<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>Whether address shows on a cell.</p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">true</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">options.showFormulaBar<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p>Whether formula bar shows.</p></li>
+<li><p>default: <code class="docutils literal notranslate"><span class="pre">true</span></code></p></li>
+</ul>
+</dd>
 <dt class="field-odd">options.renderers<span class="colon">:</span></dt>
 <dd class="field-odd"><ul>
 <li><p>You can use existing mixins or create a custom mixin.</p></li>
@@ -539,6 +582,7 @@ The parsing method to be called depends on parseFunctions.</p></li>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">GridSheet</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">Parser</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">constructInitialCellsOrigin</span><span class="p">,</span>
 <span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@gridsheet/react-core&quot;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">EvalParserMixin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -549,12 +593,15 @@ The parsing method to be called depends on parseFunctions.</p></li>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(&lt;</span><span class="nt">GridSheet</span>
-<span class="w">    </span><span class="na">data</span><span class="o">=</span><span class="p">{[</span><span class="w"> </span><span class="c1">// any[][]</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span>
-<span class="w">      </span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">],</span>
-<span class="w">    </span><span class="p">]}</span>
-<span class="w">    </span><span class="na">options</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">    </span><span class="na">initialCells</span><span class="o">=</span><span class="p">{</span>
+<span class="w">      </span><span class="nx">constructInitialCellsOrigin</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">matrix</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">],</span>
+<span class="w">          </span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">],</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">      </span><span class="p">})</span>
+<span class="w">    </span><span class="nx">options</span><span class="o">=</span><span class="p">{{</span>
 <span class="w">      </span><span class="nx">parsers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nb">eval</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Parser</span><span class="p">({</span><span class="nx">mixins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">EvalParserMixin</span><span class="p">]}),</span>
 <span class="w">      </span><span class="p">},</span>
@@ -562,7 +609,7 @@ The parsing method to be called depends on parseFunctions.</p></li>
 <span class="w">        </span><span class="nx">C</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">parser</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;eval&quot;</span><span class="w"> </span><span class="p">},</span>
 <span class="w">      </span><span class="p">},</span>
 <span class="w">    </span><span class="p">}}</span>
-<span class="w">  </span><span class="p">/&gt;)</span>
+<span class="w">  </span><span class="o">/&gt;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>

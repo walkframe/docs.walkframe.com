@@ -31,7 +31,7 @@ Simple example.
   export default function App() {
     return (<div>
       <GridSheet
-        initial={{
+        initialCells={{
           default: {style: { fontStyle: "italic" }},
           A: {style: backgroundColor: "#ddf", width: 300},
           3: {height: 100},
@@ -56,13 +56,13 @@ Another example using matrix.
 .. code-block:: jsx
 
   import * as React from "react";
-  import { GridSheet, generateInitial } from "@gridsheet/react-core";
+  import { GridSheet, constructInitialCells } from "@gridsheet/react-core";
 
   export default function App() {
     return (<div>
       <GridSheet
-        initial={
-          generateInitial({
+        initialCells={
+          constructInitialCells({
             matrices: {
               A1: [
                 ["a", 1, true],
@@ -93,7 +93,7 @@ Another example using matrix.
   More examples are `here </products/gridsheet/examples>`__.
 
 
-initial prop
+initialCells prop
 -------------------------
 This prop affects the cells matching the keys.
 
@@ -144,6 +144,28 @@ Value of the cell is an object having following keys.
 :render: Renderer identity. (string)
 :parser: Parser identity. (string)
 :labeler: Labeler identity. (string)
+
+:prevention:
+  - Prevents operations from changing the cell.
+    - Add
+      - AddRow
+        - AddRowAbove 
+        - AddRowBelow 
+      - AddCol
+        - AddColLeft 
+        - AddColRight
+    - Delete
+      - DeleteRow
+      - DeleteCol
+    - Move
+      - MoveFrom
+      - MoveTo
+    - Update
+      - Write 
+      - Style 
+      - Resize 
+      - SetRenderer 
+      - SetParser
 
 tableRef
 -------------------------
@@ -233,6 +255,16 @@ options prop
   - color mode. It allows ``"light"`` or ``"dark"``.
   - default: ``"light"``
 
+:options.showAddress:
+  
+    - Whether address shows on a cell.
+    - default: ``true``
+
+:options.showFormulaBar:
+  
+  - Whether formula bar shows.
+  - default: ``true``
+
 :options.renderers:
 
   - You can use existing mixins or create a custom mixin.
@@ -321,6 +353,7 @@ options prop
     import {
       GridSheet,
       Parser,
+      constructInitialCellsOrigin,
     } from "@gridsheet/react-core";
 
     const EvalParserMixin = {
@@ -331,11 +364,14 @@ options prop
 
     export default function App() {
       return (<GridSheet
-        data={[ // any[][]
-          ["a", 1, true],
-          ["b", 2, false],
-          ["c", 3, null],
-        ]}
+        initialCells={
+          constructInitialCellsOrigin({
+            matrix: [
+              ["a", 1, true],
+              ["b", 2, false],
+              ["c", 3, null],
+            ],
+          })
         options={{
           parsers: {
             eval: new Parser({mixins: [EvalParserMixin]}),
