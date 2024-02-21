@@ -146,21 +146,33 @@ Value of the cell is an object having following keys.
 :labeler: Labeler identity. (string)
 
 :prevention:
+
   - Prevents operations from changing the cell.
+
     - Add
+
       - AddRow
+    
         - AddRowAbove 
         - AddRowBelow 
+
       - AddCol
+    
         - AddColLeft 
         - AddColRight
+    
     - Delete
+    
       - DeleteRow
       - DeleteCol
+    
     - Move
+    
       - MoveFrom
       - MoveTo
+    
     - Update
+    
       - Write 
       - Style 
       - Resize 

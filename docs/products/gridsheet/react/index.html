@@ -308,7 +308,7 @@
 </li>
 </ul>
 <p>Value of the cell is an object having following keys.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">value<span class="colon">:</span></dt>
 <dd class="field-odd"><p>cell value.</p>
 </dd>
@@ -351,32 +351,46 @@ This is to avoid styling bugs in of conflicting property.</p></li>
 <dd class="field-even"><p>Labeler identity. (string)</p>
 </dd>
 <dt class="field-odd">prevention<span class="colon">:</span></dt>
-<dd class="field-odd"><ul>
-<li><p>Prevents operations from changing the cell.
-- Add</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>AddRow
-- AddRowAbove
-- AddRowBelow</p></li>
-<li><p>AddCol
-- AddColLeft
-- AddColRight</p></li>
+<dd class="field-odd"><ul class="simple">
+<li><p>Prevents operations from changing the cell.</p>
+<ul>
+<li><p>Add</p>
+<ul>
+<li><p>AddRow</p>
+<ul>
+<li><p>AddRowAbove</p></li>
+<li><p>AddRowBelow</p></li>
 </ul>
-</div></blockquote>
-<ul class="simple">
-<li><p>Delete
-- DeleteRow
-- DeleteCol</p></li>
-<li><p>Move
-- MoveFrom
-- MoveTo</p></li>
-<li><p>Update
-- Write
-- Style
-- Resize
-- SetRenderer
-- SetParser</p></li>
+</li>
+<li><p>AddCol</p>
+<ul>
+<li><p>AddColLeft</p></li>
+<li><p>AddColRight</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Delete</p>
+<ul>
+<li><p>DeleteRow</p></li>
+<li><p>DeleteCol</p></li>
+</ul>
+</li>
+<li><p>Move</p>
+<ul>
+<li><p>MoveFrom</p></li>
+<li><p>MoveTo</p></li>
+</ul>
+</li>
+<li><p>Update</p>
+<ul>
+<li><p>Write</p></li>
+<li><p>Style</p></li>
+<li><p>Resize</p></li>
+<li><p>SetRenderer</p></li>
+<li><p>SetParser</p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
