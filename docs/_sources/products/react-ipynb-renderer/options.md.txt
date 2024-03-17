@@ -10,7 +10,7 @@ Following options are common to react-ipynb-renderer and react-ipynb-renderer-ka
 |--------|-----------------------------|--------------------|
 | object | **this option is required** | ```ipynb={json}``` |
 
-The ipynb file is just a json file. Specify the object from which it was parsed.
+Specify the object from which the ipynb file was parsed as json.
 
 See below for the detailed format.
 
@@ -35,7 +35,7 @@ See this [link](./theme/) for details.
 
 Specify the programming language used by jupyter notebook.
 
-Currently, we assume the following
+The following languages are assumed
 - `python`
 - `r`
 - `julia`
@@ -78,6 +78,24 @@ This function is used by the following.
 | boolean | false      | ```seqAsExecutionCount={true}``` |
 
 If this option is enabled, sequential cell numbers are displayed instead of `cell.execution_count`.
+
+## onLoad
+**Since v2.2.x**
+
+| type     | required   | example                                      |
+|----------|------------|----------------------------------------------|
+| function | false      | ```onLoad={() => {console.log('Loaded')}}``` |
+
+Callback function fired at the end of drawing.
+
+## ref
+**Since v2.2.x**
+
+| type                             | required   | example         |
+|----------------------------------|------------|-----------------|
+| MutableRefObject<HTMLDivElement> | false      | ```ref={ref}``` |
+
+A ref object to be passed to the root element, created with useRef.
 
 
 ## markdownOptions

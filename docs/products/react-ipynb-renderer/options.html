@@ -210,7 +210,7 @@
 </tbody>
 </table>
 </div>
-<p>The ipynb file is just a json file. Specify the object from which it was parsed.</p>
+<p>Specify the object from which the ipynb file was parsed as json.</p>
 <p>See below for the detailed format.</p>
 <p><a href="https://nbformat.readthedocs.io/en/latest/format_description.html" target="_blank" rel="noreferrer">https://nbformat.readthedocs.io/en/latest/format_description.html</a></p>
 </section>
@@ -254,7 +254,7 @@
 </table>
 </div>
 <p>Specify the programming language used by jupyter notebook.</p>
-<p>Currently, we assume the following</p>
+<p>The following languages are assumed</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">python</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">r</span></code></p></li>
@@ -334,6 +334,48 @@ It is recommended that this option not be changed unless the ipynb to be rendere
 </table>
 </div>
 <p>If this option is enabled, sequential cell numbers are displayed instead of <code class="docutils literal notranslate"><span class="pre">cell.execution_count</span></code>.</p>
+</section>
+<section id="onload">
+<h2>onLoad<a class="headerlink" href="#onload" title="Permalink to this heading">#</a></h2>
+<p><strong>Since v2.2.x</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>required</p></th>
+<th class="head"><p>example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>function</p></td>
+<td><p>false</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">onLoad={()</span> <span class="pre">=&gt;</span> <span class="pre">{console.log('Loaded')}}</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Callback function fired at the end of drawing.</p>
+</section>
+<section id="ref">
+<h2>ref<a class="headerlink" href="#ref" title="Permalink to this heading">#</a></h2>
+<p><strong>Since v2.2.x</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>required</p></th>
+<th class="head"><p>example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MutableRefObject<HTMLDivElement></p></td>
+<td><p>false</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ref={ref}</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A ref object to be passed to the root element, created with useRef.</p>
 </section>
 <section id="markdownoptions">
 <h2>markdownOptions<a class="headerlink" href="#markdownoptions" title="Permalink to this heading">#</a></h2>
@@ -526,6 +568,8 @@ https://github.com/goessner/markdown-it-texmath</a>
 <li><a class="reference internal" href="#bgtransparent">bgTransparent</a></li>
 <li><a class="reference internal" href="#htmlfilter">htmlFilter</a></li>
 <li><a class="reference internal" href="#seqasexecutioncount">seqAsExecutionCount</a></li>
+<li><a class="reference internal" href="#onload">onLoad</a></li>
+<li><a class="reference internal" href="#ref">ref</a></li>
 <li><a class="reference internal" href="#markdownoptions">markdownOptions</a><ul>
 <li><a class="reference internal" href="#remarkmath">remarkMath</a></li>
 <li><a class="reference internal" href="#remarkmathoptions">remarkMathOptions</a></li>

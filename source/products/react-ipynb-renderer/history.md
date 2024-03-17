@@ -2,6 +2,17 @@
 
 # History
 
+## v2.2.x
+- Upgrade dependent libraries.
+- Support Server side rendering.
+  - Nextjs no longer requires the use of next/dynamic when rendering SSRs.
+- Add props.
+  - onLoad
+  - ref
+- Add E2E tests.
+- Add lint.
+- Add issue templates.
+
 ## v2.1.x
 - Add jupyter themes.
   - default
