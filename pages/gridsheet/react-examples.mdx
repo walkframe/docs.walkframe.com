@@ -1,0 +1,108 @@
+import Example1 from "./src/Example1";
+import Example2 from "./src/Example2";
+import Example3 from "./src/Example3";
+
+import Example5 from "./src/Example5";
+import Example6 from "./src/Example6";
+
+# Examples
+
+Here are [gridsheet](https://www.npmjs.com/package/@gridsheet/react-core) examples in demo.
+
+- [GitHub](https://github.com/walkframe/gridsheet)
+- [Document](/gridsheet/react/)
+
+## Example1 - Simple example with formula
+Source: [gridsheet-example1/App.tsx](https://github.com/walkframe/docs.walkframe.com/blob/main/source/gridsheet/example1/App.tsx)
+
+<Example1 />
+
+- Support formula
+
+  - Ref
+  - Absolute Ref
+  - functions
+
+    - custom function
+
+- Cell config:
+
+  - ``options.cells[column].width``: Column width.
+  - ``options.cells[column].style``: Cell style in the column.
+
+## Example2 - Custom renderers with dark mode
+Source: [gridsheet-example2/App.tsx](https://github.com/walkframe/docs.walkframe.com/blob/main/source/gridsheet/example2/App.tsx)
+
+<Example2 />
+
+- Dark mode:
+
+  - ``options.mode = 'dark'``: Set mode dark
+
+- API response format:
+
+  - ``oa2aa(response.data)``: converts ``object in array`` to ``array in array``
+
+- Custom renderer:
+
+  - ThousandSeparatorRenderer: renders a number with comma. (built-in)
+  - ImageRenderer: renders an image related to the string as a link.
+  - LinkRenderer: renders a string as a link.
+
+- Cell label
+
+  - ``options.labelers``: Functions to make label by object.
+  - ``cell.labeler``: Name to extract the label function above.
+
+- Freeze number of columns.
+
+  - ``options.minNumCols = 5``
+  - ``options.maxNumCols = 5``
+
+
+## Example3 - Event handling
+Source: [gridsheet-example3/App.tsx](https://github.com/walkframe/docs.walkframe.com/blob/main/source/gridsheet/example3/App.tsx)
+
+<Example3 />
+
+- Custom parser:
+
+  - ListParser: parses a newline delimited string as a (string) list.
+
+- Feedback functions:
+
+  - onSave: ``setTsv`` is set to render TSV.
+  - onChange: ``console.log`` is set to show the changes.
+
+## Example4 - Date reloading
+Source: [gridsheet-example4/App.tsx](https://github.com/walkframe/docs.walkframe.com/blob/main/source/gridsheet/example4/App.tsx)
+
+Would be fixed.
+
+- The above sheet is test data.
+- The sheet below shows two-factor coverage combinations made from the testdata.
+    
+  - Pairwise tool: [CoverTable](https://github.com/walkframe/covertable)
+
+## Example5 - Limit width, Resize, Multiple sheets
+Source: [gridsheet-example5/App.tsx](https://github.com/walkframe/docs.walkframe.com/blob/main/source/gridsheet/example5/App.tsx)
+
+<Example5 />
+
+
+- ``style`` and ``className`` props will be passed.
+
+  - ``{ maxWidth: "100%"}`` prevents the sheet exceeding the parent width.
+
+- ``options.sheetResize`` means `css resize <https://developer.mozilla.org/en-US/docs/Web/CSS/resize>`__ of the sheet.
+
+## Example6 - Change the data from outside
+Source: [gridsheet-example6/App.tsx](https://github.com/walkframe/docs.walkframe.com/blob/main/source/gridsheet/example6/App.tsx)
+
+<Example6 />
+
+- use `tableRef`
+
+  - `tableRef` has ``dispatch`` and ``table``
+  - update table and dispatch it.
+

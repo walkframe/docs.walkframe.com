@@ -1,0 +1,411 @@
+
+
+
+# Gridsheet
+
+- [Examples](/products/gridsheet/examples)
+- [GitHub](https://github.com/walkframe/gridsheet)
+- [NPM](https://www.npmjs.com/package/@gridsheet/react-core)
+
+# Installation
+
+```sh
+$ npm install @gridsheet/react-core --save
+```
+
+# Usage 
+Simple example.
+
+
+```jsx
+import * as React from "react";
+import { GridSheet } from "@gridsheet/react-core";
+export default function App() {
+  return (<div>
+    <GridSheet
+      initialCells={{
+        default: {style: { fontStyle: "italic" }},
+        A: {style: backgroundColor: "#ddf", width: 300},
+        3: {height: 100},
+        A1: {value: "a", style: {color: "#00f"}},
+        B1: {value: 1},
+        C1: {value: true},
+        A2: {value: "b"},
+        B2: {value: 2},
+        C2: {value: false},
+        B1: {value: 3},
+      }}
+      options={{ // Optional
+      }}
+      className="some-class"
+      style={{ maxWidth: "100%" }}
+    />
+  </div>);
+}
+```
+
+Another example using matrix.
+
+```jsx
+import * as React from "react";
+import { GridSheet, constructInitialCells } from "@gridsheet/react-core";
+export default function App() {
+  return (<div>
+    <GridSheet
+      initialCells={
+        constructInitialCells({
+          matrices: {
+            A1: [
+              ["a", 1, true],
+              ["b", 2, false],
+              ["c", undefined, null],
+            ],
+          }
+          cells: {
+            A1: {
+              style: {color: "#50f"}
+            },
+            B3: {
+              value: 33,
+            },
+          }
+        })
+      }
+      options={{ // Optional
+      }}
+      className="some-class"
+      style={{ maxWidth: "100%" }}
+    />
+  </div>);
+}
+```
+
+
+More examples are [here](./react-examples).
+
+
+## initialCells prop
+This prop affects the cells matching the keys.
+
+Key rules:
+
+- `default` (lowercase) field matches all rows, columns and cells.
+
+  - You can set default height and width here.
+
+    - defaultHeight and defaultWidth has been dropped.
+
+- An upppercase letter field means a config for a column.
+
+  - e.g. **A**: 1st column, **B**: 2nd column
+
+- A number Fields means a config for a row.
+
+  - e.g. **1**: 1st row, **2**: 2nd row.
+
+- An upppercase letter + A number field means a unique cell.
+
+  - e.g. **A1**: Most top left cell.
+  - If a cell matches multiple cell configs, it applys the configs in the following order: `cell` > `column` > `row` > `default`.
+
+Value of the cell is an object having following keys.
+
+value: cell value.
+label: Header's label instead of Column ID. Only row and column configs work.
+width: Horizontal header's width. (px)
+height: Vertical header's height. (px)
+style:
+
+- Cell style object. (React.CSSProperties)
+- When specifying a border, separate it into borderTop, borderLeft, borderBottom, and borderRight.
+  This is to avoid styling bugs in of conflicting property.
+
+alignItems:
+
+- Adjusts the position of the content vertically.
+- `verticalAlign` prop has switched to this property at v0.10.x.
+- This field equals css `align-items` property.
+
+justifyContent:
+
+- Adjusts the position of the content horizontally.
+- This field equals css `justify-content` property.
+
+render: Renderer identity. (string)
+parser: Parser identity. (string)
+labeler: Labeler identity. (string)
+
+prevention:
+
+- Prevents operations from changing the cell.
+  - Add
+    - AddRow
+  
+      - AddRowAbove 
+      - AddRowBelow 
+    - AddCol
+  
+      - AddColLeft 
+      - AddColRight
+  
+  - Delete
+  
+    - DeleteRow
+    - DeleteCol
+  
+  - Move
+  
+    - MoveFrom
+    - MoveTo
+  
+  - Update
+  
+    - Write 
+    - Style 
+    - Resize 
+    - SetRenderer 
+    - SetParser
+
+## tableRef
+
+`tableRef` can be created by `createTableRef()`.
+
+We can access to table through it.
+
+Example of writing "test" in cell A1.
+
+```jsx
+export default function App() {
+  const tableRef = createTableRef();
+  React.useEffect(() => {
+    const { dispatch, table } = tableRef.current;
+    dispatch(table.write({point: {x: 1, y: 1}, value: "test"}));
+  }, [something]);
+};
+```
+
+
+## options prop
+
+### options.sheetHeight
+
+- Sheet height size.
+- default: ``500``
+
+### options.sheetWidth
+
+- Sheet width size.
+- default: ``1000``
+
+### options.minNumRows
+
+- Min number of rows
+- default: ``1``
+
+### options.maxNumRows
+
+- Max number of rows
+- default: ``-1``
+
+### options.minNumCols
+
+- Min number of columns
+- default: ``1``
+
+### options.maxNumCols
+
+- Max number of columns
+- default: ``-1``
+
+### options.historyLimit
+
+- History (undo, redo) size.
+- default: ``10``
+
+### options.headerHeight
+
+- Horizontal header height. (number)
+- default: ``20``
+
+### options.headerWidth
+
+- Vertical header width. (number)
+- default: ``50``
+
+### options.editingOnEnter
+
+- Whether `ENTER` key gets down and set the cell editing.
+- default: ``true``
+
+### options.cellLabel
+
+- Whether cell labels (navigator) show.
+- default: ``true``
+
+### options.mode
+
+- color mode. It allows ``"light"`` or ``"dark"``.
+- default: ``"light"``
+
+### options.showAddress
+  
+- Whether address shows on a cell.
+- default: ``true``
+
+### options.showFormulaBar
+  
+- Whether formula bar shows.
+- default: ``true``
+
+### options.renderers
+
+You can use existing mixins or create a custom mixin.
+
+Renderer mixins override default methods.
+
+The available fields are as follows.
+- render: calls and separates the following methods according to the value type.
+- stringify: changes cell value to string when the cell editing and pasting. (from v0.5.7)
+- string: renders cell value when type of the cell is `string`.
+- bool: renders cell value when type of the cell is `boolean`.
+- number: renders cell value when type of the cell is `number`.
+- date: renders cell value when type of the cell is `date`.
+- array: renders cell value when type of the cell is `array`.
+- object: renders cell value when type of the cell is `object`.
+- null: renders cell value when type of the cell is `null`.
+- undefined: renders cell value when type of the cell is `undefined`.
+
+default: ``{}``
+
+To use a Renderer mixin, specify its Mixin object in the mixins props when creating the Renderer instance.
+Specify the Renderer instance as an object in `options.renderers`. The key is the identifier of the Renderer. This identifier is specified as the renderer key of `cell`.
+
+
+```jsx
+import * as React from "react";
+import {
+  GridSheet,
+  Renderer,
+  RendererMixinType,
+  CheckboxRendererMixin,
+} from "@gridsheet/react-core";
+
+const QuoteRendererMixin: RendererMixinType = {
+  string(cell) {
+    return `"${cell.value}"`;
+  }
+  stringify(cell) {
+    return "" + cell.value;
+  }
+}
+
+export default function App() {
+  return (<GridSheet
+    data={[ // any[][]
+      ["a", 1, true],
+      ["b", 2, false],
+      ["c", 3, null],
+    ]}
+    options={{
+      renderers: {
+        quote: new Renderer({mixins: [QuoteRendererMixin, CheckboxRendererMixin]}),
+      },
+      cells: {
+        A: { renderer: "quote" },
+      },
+    }}
+  />)
+}
+```
+
+### options.parsers:
+
+Parser, like Renderer, can control its movement through Mixin.
+
+- Parser mixins override default methods.
+
+The available fields are as follows.
+- parseFunctions: An array of functions that convert a string input from the user.
+  The function takes a string and returns an arbitrary value.
+- callback: calls the parse method and stores the value in the cell.
+  This is used to reflect input values in non-value fields.
+- parse: parses an input string.
+  The following parse methods are called in sequence, returning the successfully parsed value.
+  The parsing method to be called depends on parseFunctions.
+- number: parses it to number type.
+- timedelta: parses it to timedelta type.
+- date: parses it to date type.
+- bool: parses it to boolean type.
+
+To use the parser, you have to specify the parser's identity to `options.cells[column].parser`.
+default: ``{}``
+
+```jsx
+import * as React from "react";
+import {
+  GridSheet,
+  Parser,
+  constructInitialCellsOrigin,
+} from "@gridsheet/react-core";
+const EvalParserMixin = {
+  parseFunctions = [
+    eval,
+  ];
+}
+export default function App() {
+  return (<GridSheet
+    initialCells={
+      constructInitialCellsOrigin({
+        matrix: [
+          ["a", 1, true],
+          ["b", 2, false],
+          ["c", 3, null],
+        ],
+      })
+    }
+    options={{
+      parsers: {
+        eval: new Parser({mixins: [EvalParserMixin]}),
+      },
+      cells: {
+        C: { parser: "eval" },
+      },
+    }}
+  />)
+}
+```
+
+### options.resize
+
+#### both
+allows resizing both directions.
+
+#### vertical
+allows resizing vertically.
+
+#### horizontal
+allows resizing horizontally.
+
+#### none
+does not allow resizing.
+
+### options.onSave:
+
+- A callback function on you saving.
+  - Saving events are emitted by `Ctrl + s` or `Command + s`.
+- ``(table, positions) => void``
+  - `positions` argument has 3 keys. Every values gets cell position indeces like ``[Y as number, X as number]``.
+    - pointing: A pointing cell.
+    - selectingFrom: A cell selected (dragged) from. If no cells dragged, it will be ``[-1, -1]``.
+    - selectingTo: A cell selected (dragged) to. If no cells dragged, it will be ``[-1, -1]``.
+
+### options.onChange:
+
+- A callback function on ``table`` changed.
+- ``(table, positions) => void`` (same as onSave)
+- onChangeDiff was dropped.
+
+### options.onSelect
+
+- A callback function on select or dragging cells.
+- ``(table, positions) => void`` (same as onSave)
