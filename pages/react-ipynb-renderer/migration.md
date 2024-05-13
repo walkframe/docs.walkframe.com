@@ -1,4 +1,4 @@
-<a href="/products/react-ipynb-renderer">Back to index</a>
+<a href="/react-ipynb-renderer">Back to index</a>
 
 # Migrate for v2.0.x
 
