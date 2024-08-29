@@ -1,0 +1,30 @@
+import Case from "./Case2";
+
+# Custom renderers with dark mode
+
+<Case />
+
+- Dark mode:
+
+  - ``options.mode = 'dark'``: Set mode dark
+
+- API response format:
+
+  - ``oa2aa(response.data)``: converts ``object in array`` to ``array in array``
+
+- Custom renderer:
+
+  - ThousandSeparatorRenderer: renders a number with comma. (built-in)
+  - ImageRenderer: renders an image related to the string as a link.
+  - LinkRenderer: renders a string as a link.
+
+- Cell label
+
+  - ``options.labelers``: Functions to make label by object.
+  - ``cell.labeler``: Name to extract the label function above.
+
+- Freeze number of columns.
+
+  - ``options.minNumCols = 5``
+  - ``options.maxNumCols = 5``
+

@@ -26,7 +26,7 @@ export default function App() {
       >
         <tbody>
           <tr>
-            <td>
+            <td style={{width: '50%'}}>
               <h2>Resize: both</h2>
               <GridSheet
                 initialCells={(() => {
@@ -61,7 +61,7 @@ export default function App() {
                 }}
               />
             </td>
-            <td>
+            <td style={{width: '50%'}}>
               <h2>Resize: vertical</h2>
               <GridSheet
                 initialCells={(() => {

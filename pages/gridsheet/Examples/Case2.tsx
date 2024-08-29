@@ -32,7 +32,7 @@ const ImageRendererMixin: RendererMixinType = {
 const LinkRendererMixin: RendererMixinType = {
   string(value: string) {
     return (
-      <a target="_blank" href={value}>
+      <a target="_blank" href={value} style={{color: '#2255FF'}}>
         {value}
       </a>
     );

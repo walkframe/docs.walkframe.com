@@ -14,8 +14,8 @@ importers:
   .:
     dependencies:
       '@gridsheet/react-core':
-        specifier: ^1.0.7-alpha.0
-        version: 1.0.7-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^1.1.0-alpha.1
+        version: 1.1.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@octokit/request':
         specifier: ^9.1.1
         version: 9.1.1
@@ -52,8 +52,8 @@ packages:
     resolution: {integrity: sha512-Nms86NXrsaeU9vbBJKni6gXiEXZ4CVpYVzEjDH9Sb8vmZ3UljyA1GSOJl/6LGPO8EHLuSF9H+IxNXHPX8QHJ4g==}
     engines: {node: '>=6.9.0'}
 
-  '@gridsheet/react-core@1.0.7-alpha.0':
-    resolution: {integrity: sha512-E40W9wNX/ilBBPi3KVG4ZG4q7V+jShQygE/6vt7wMHuriG6rtTp+FDn9ac8upEiapU1V3c/2GhAXIv5Yn44Osg==}
+  '@gridsheet/react-core@1.1.0-alpha.1':
+    resolution: {integrity: sha512-uw0OX4XMdrFO4+jUPXzB/jzUP9YRtoHJy0TsyewZNB9n3zk6pJZG6+fmULuEFvJDjGhShjEmK84JOsC4gLrYlw==}
     peerDependencies:
       react: 18.2.0
       react-dom: '>=16.9.0'
@@ -1165,7 +1165,7 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
-  '@gridsheet/react-core@1.0.7-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@gridsheet/react-core@1.1.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       date-fns: 2.30.0
       date-fns-timezone: 0.1.4

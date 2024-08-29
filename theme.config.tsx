@@ -1,10 +1,15 @@
 import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import { DocsThemeConfig } from 'nextra-theme-docs';
+import { GitHubEmbed } from './components/GitHubEmbed';
+
 
 const config: DocsThemeConfig = {
   logo: <span>Walkframe doc</span>,
   project: {
     link: 'https://github.com/walkframe',
+  },
+  components: {
+    GitHubEmbed,
   },
   /*
   chat: {
