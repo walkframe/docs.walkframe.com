@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/shuding/nextra-docs-template#readme",
   "dependencies": {
-    "@gridsheet/react-core": "^1.1.0-alpha.1",
+    "@gridsheet/react-core": "^1.1.0",
+    "@monaco-editor/react": "^4.6.0",
     "@octokit/request": "^9.1.1",
     "next": "^13.0.6",
     "nextra": "latest",

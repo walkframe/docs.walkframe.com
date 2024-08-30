@@ -1,6 +1,6 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs';
-import { GitHubEmbed } from './components/GitHubEmbed';
+import { GitHubViewer } from './components/GitHubViewer';
 
 
 const config: DocsThemeConfig = {
@@ -9,7 +9,7 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/walkframe',
   },
   components: {
-    GitHubEmbed,
+    GitHubViewer,
   },
   /*
   chat: {

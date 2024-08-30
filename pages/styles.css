@@ -5,8 +5,10 @@ body {
 }
 
 .example-app {
-  padding: 0;
-  border: double 3px rgba(128, 128, 128, 0.2);
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px rgba(128, 128, 128, 0.2);
   background-color: rgba(128, 128, 128, 0.2);
+  box-shadow: 0 10px 25px 0 rgba(50, 50, 50, .5);
   overflow: auto;
 }

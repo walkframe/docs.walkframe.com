@@ -14,8 +14,11 @@ importers:
   .:
     dependencies:
       '@gridsheet/react-core':
-        specifier: ^1.1.0-alpha.1
-        version: 1.1.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^1.1.0
+        version: 1.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@monaco-editor/react':
+        specifier: ^4.6.0
+        version: 4.6.0(monaco-editor@0.51.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@octokit/request':
         specifier: ^9.1.1
         version: 9.1.1
@@ -52,8 +55,8 @@ packages:
     resolution: {integrity: sha512-Nms86NXrsaeU9vbBJKni6gXiEXZ4CVpYVzEjDH9Sb8vmZ3UljyA1GSOJl/6LGPO8EHLuSF9H+IxNXHPX8QHJ4g==}
     engines: {node: '>=6.9.0'}
 
-  '@gridsheet/react-core@1.1.0-alpha.1':
-    resolution: {integrity: sha512-uw0OX4XMdrFO4+jUPXzB/jzUP9YRtoHJy0TsyewZNB9n3zk6pJZG6+fmULuEFvJDjGhShjEmK84JOsC4gLrYlw==}
+  '@gridsheet/react-core@1.1.0':
+    resolution: {integrity: sha512-ZlyB9Xl+m4HwU/Et2spW3JS0P1yD/w3DhhANKgYsjwFh2YFrW9b7TtANEbZfxlYTWqBZaGNd3DL9oBimuJzCiA==}
     peerDependencies:
       react: 18.2.0
       react-dom: '>=16.9.0'
@@ -72,6 +75,18 @@ packages:
     resolution: {integrity: sha512-YdXcMcEnqZhzql98RNrqYo9cEhTTesBiCclEtoiQUbJwx87q9453GTapYU6kJ8ZZ2ek1Vp25SiAXEFy5O/eAPw==}
     peerDependencies:
       react: 18.2.0
+
+  '@monaco-editor/loader@1.4.0':
+    resolution: {integrity: sha512-00ioBig0x642hytVspPl7DbQyaSWRaolYie/UFNjoTdvoKPzo6xrXLhTk9ixgIKcLH5b5vDOjVNiGyY+uDCUlg==}
+    peerDependencies:
+      monaco-editor: '>= 0.21.0 < 1'
+
+  '@monaco-editor/react@4.6.0':
+    resolution: {integrity: sha512-RFkU9/i7cN2bsq/iTkurMWOEErmYcY6JiQI3Jn+WeR/FGISH8JbHERjpS9oRuSOPvDMJI0Z8nJeKkbOs9sBYQw==}
+    peerDependencies:
+      monaco-editor: '>= 0.25.0 < 1'
+      react: 18.2.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
 
   '@napi-rs/simple-git-android-arm-eabi@0.1.8':
     resolution: {integrity: sha512-JJCejHBB1G6O8nxjQLT4quWCcvLpC3oRdJJ9G3MFYSCoYS8i1bWCWeU+K7Br+xT+D6s1t9q8kNJAwJv9Ygpi0g==}
@@ -783,6 +798,9 @@ packages:
   micromark@3.1.0:
     resolution: {integrity: sha512-6Mj0yHLdUZjHnOPgr5xfWIMqMWS12zDN6iws9SLuSz76W8jTtAv24MN4/CL7gJrl5vtxGInkkqDv/JIoRsQOvA==}
 
+  monaco-editor@0.51.0:
+    resolution: {integrity: sha512-xaGwVV1fq343cM7aOYB6lVE4Ugf0UyimdD/x5PWcWBMKENwectaEu77FAN7c5sFiyumqeJdX1RPTh1ocioyDjw==}
+
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -1005,6 +1023,9 @@ packages:
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
 
+  state-local@1.0.7:
+    resolution: {integrity: sha512-HTEHMNieakEnoe33shBYcZ7NX83ACUjCu8c40iOGEZsngj9zRnkqS9j1pqQPXwobB0ZcVTk27REb7COQ0UR59w==}
+
   stringify-entities@4.0.3:
     resolution: {integrity: sha512-BP9nNHMhhfcMbiuQKCqMjhDP5yBCAxsPu4pHFFzJ6Alo9dZgY4VLDPutXqIjpRiMoKdp7Av85Gr73Q5uH9k7+g==}
 
@@ -1165,7 +1186,7 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
-  '@gridsheet/react-core@1.1.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@gridsheet/react-core@1.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       date-fns: 2.30.0
       date-fns-timezone: 0.1.4
@@ -1205,6 +1226,18 @@ snapshots:
       '@types/mdx': 2.0.3
       '@types/react': 18.2.0
       react: 18.2.0
+
+  '@monaco-editor/loader@1.4.0(monaco-editor@0.51.0)':
+    dependencies:
+      monaco-editor: 0.51.0
+      state-local: 1.0.7
+
+  '@monaco-editor/react@4.6.0(monaco-editor@0.51.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@monaco-editor/loader': 1.4.0(monaco-editor@0.51.0)
+      monaco-editor: 0.51.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
 
   '@napi-rs/simple-git-android-arm-eabi@0.1.8':
     optional: true
@@ -2107,6 +2140,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  monaco-editor@0.51.0: {}
+
   mri@1.2.0: {}
 
   ms@2.1.2: {}
@@ -2398,6 +2433,8 @@ snapshots:
   space-separated-tokens@2.0.2: {}
 
   sprintf-js@1.0.3: {}
+
+  state-local@1.0.7: {}
 
   stringify-entities@4.0.3:
     dependencies:
