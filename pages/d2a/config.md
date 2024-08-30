@@ -45,7 +45,10 @@ D2A_CONFIG = {
 
 
 ## ALIASES
-- type: ``dict[django.db.models.fields.Field, django.db.models.fields.Field]``
+
+| type             |
+|------------------|
+| `dict[django.db.models.fields.Field, django.db.models.fields.Field]` |
 
 If you are using custom django field, `d2a` is not able to resolve the type as it is.
 
@@ -68,7 +71,10 @@ D2A_CONFIG = {
 ```
 
 ## AUTOLOAD
-- type: ``dict``
+
+| type             |
+|------------------|
+| `dict`           |
 
 ![](https://img.shields.io/badge/level-warning-orange)
 
@@ -96,17 +102,24 @@ Then you can import the auto loaded models as a module.
 
 ## BLOCKS
 
-:type: ``dict[str, str]``
+| type   |
+|------------------|
+| `dict[str, str]` |
 
-This is a template context for `Code generation </d2a/features/codegen.html>`__ in a word.
+
+This is a template context for [Code generation](/d2a/features/codegen.html) in a word.
 
 The context values will be rendered if its key is referred in a template.
 
-Current original template is `here <https://github.com/walkframe/d2a/blob/master/project_postgresql/original_template.tmpl>`__.
+Current original template is [here](https://github.com/walkframe/d2a/blob/master/project_postgresql/original_template.tmpl).
 
 
 ## COL_PARAMS
-type: ``dict[str, dict[str, any]]``
+
+| type             |
+|------------------|
+| `dict[str, dict[str, any]]`           |
+
 
 This option updates args that are going to be specified for the ``sqlalchemy.sql.schema.Column``.
 
@@ -142,7 +155,9 @@ D2A_CONFIG = {
 
 ## MISSING
 
-:type: ``django.db.models.fields.Field``
+| type             |
+|------------------|
+| `django.db.models.fields.Field`           |
 
 This option complements the field that did not resolve type with the specified field.
 
@@ -173,7 +188,10 @@ D2A_CONFIG = {
 
 
 ## REL_PARAMS
-type: ``dict[str, dict[str, any]]``
+
+| type             |
+|------------------|
+| `dict[str, dict[str, any]]`           |
 
 This option updates args that are going to be specified for the ``sqlalchemy.orm.relationship``.
 
@@ -213,7 +231,10 @@ This option does not work in AUTOLOAD mode.
 
 
 ## TYPE_PARAMS
-type: ``dict[str, dict[str, any]]``
+
+| type             |
+|------------------|
+| `dict[str, dict[str, any]]`           |
 
 This option updates args that are going to be specified for the ``sqlalchemy.sql.type_api.TypeEngine``.
 
@@ -240,7 +261,10 @@ https://docs.sqlalchemy.org/en/13/core/type_basics.html#generic-types
 This option does not work in AUTOLOAD mode.
 
 ## TYPES
-type: ``dict[str, str]``
+
+| type             |
+|------------------|
+| `dict[str, str]`          |
 
 This option overrides the type.
 
