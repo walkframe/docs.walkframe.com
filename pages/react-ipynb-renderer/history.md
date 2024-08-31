@@ -4,8 +4,6 @@
 
 ## v2.2.x
 - Upgrade dependent libraries.
-- Support Server side rendering.
-  - Nextjs no longer requires the use of next/dynamic when rendering SSRs.
 - Add props.
   - onLoad
   - ref
