@@ -22,6 +22,9 @@ importers:
       '@octokit/request':
         specifier: ^9.1.1
         version: 9.1.1
+      covertable:
+        specifier: ^2.4.0
+        version: 2.4.0
       next:
         specifier: ^13.0.6
         version: 13.0.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -456,6 +459,9 @@ packages:
   compute-scroll-into-view@2.0.4:
     resolution: {integrity: sha512-y/ZA3BGnxoM/QHHQ2Uy49CLtnWPbt4tTPpEEZiEmmiWBFKjej7nEyH8Ryz54jH0MLXflUYA3Er2zUxPSJu5R+g==}
 
+  covertable@2.4.0:
+    resolution: {integrity: sha512-bJvkCkhSDCYfctl7244iGEFq/mt46X1RugcynR1fpNYasxjSk7e6ZyOov7meqzUHqq3WilZy/gQUXjWZVoipVQ==}
+
   cross-spawn@5.1.0:
     resolution: {integrity: sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==}
 
@@ -774,6 +780,9 @@ packages:
   isomorphic-dompurify@2.15.0:
     resolution: {integrity: sha512-RDHlyeVmwEDAPZuX1VaaBzSn9RrsfvswxH7faEQK9cTHC1dXeNuK6ElUeSr7locFyeLguut8ASfhQWxHB4Ttug==}
     engines: {node: '>=18'}
+
+  js-md5@0.7.3:
+    resolution: {integrity: sha512-ZC41vPSTLKGwIRjqDh8DfXoCrdQIyBgspJVPXHBGu4nZlAEvG3nf+jO9avM9RmLiGakg7vz974ms99nEV0tmTQ==}
 
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -2091,6 +2100,10 @@ snapshots:
 
   compute-scroll-into-view@2.0.4: {}
 
+  covertable@2.4.0:
+    dependencies:
+      js-md5: 0.7.3
+
   cross-spawn@5.1.0:
     dependencies:
       lru-cache: 4.1.5
@@ -2495,6 +2508,8 @@ snapshots:
       - canvas
       - supports-color
       - utf-8-validate
+
+  js-md5@0.7.3: {}
 
   js-tokens@4.0.0: {}
 
