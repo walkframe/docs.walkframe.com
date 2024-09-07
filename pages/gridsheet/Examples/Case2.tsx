@@ -74,15 +74,14 @@ export default function App() {
               C: { labeler: "user", width: 150, alignItems: "center" },
               D: {
                 labeler: "url",
-                width: 300,
+                width: 200,
                 renderer: "link",
                 alignItems: "center",
               },
               E: {
                 labeler: "contributions",
-                style: { textAlign: "right" },
                 alignItems: "center",
-                justifyContent: "center",
+                justifyContent: "right",
                 renderer: "thousand_separator",
               },
             },

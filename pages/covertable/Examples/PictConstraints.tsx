@@ -24,12 +24,12 @@ export default function App() {
   const [rows, setRows] = React.useState<FactorType[]>([])
   React.useEffect(() => {
     const lexer = new PictConstraintsLexer(constraints, true);
+    setLexer(lexer);
     const rows = make(factors, {
       sorter: sorters.random,
       criterion: criteria.greedy,
       preFilter: lexer.filter,
     });
-    setLexer(lexer);
     setRows(rows)
   }, [constraints])
   return (
@@ -39,8 +39,7 @@ table {
   table-layout: fixed;
   border-collapse: collapse;
 }
-th,
-td {
+th, td {
   padding: 5px;
   border: solid 1px #888888;
 }
