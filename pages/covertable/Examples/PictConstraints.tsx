@@ -13,6 +13,7 @@ IF [os] = "iOS" THEN [machine] = "iPhone";`;
 
 const style = `
 .wrapper {
+  font-size: 12px;
   display: flex;
   justify-content: space-between;
   gap: 10px;
