@@ -11,7 +11,7 @@ import {
 const ListRendererMixin: RendererMixinType = {
   array(value: any[]) {
     return (
-      <ul>
+      <ul style={{listStyleType: 'disc', paddingLeft: '30px'}}>
         {value.map((v, i) => (
           <li key={i}>{v}</li>
         ))}
