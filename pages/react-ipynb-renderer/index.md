@@ -62,8 +62,8 @@ export const Component = () => {
 
 # More information
 
-- [Options](./options)
-- [Theme](./theme)
-- [History](./history)
-- [Code migration](./migration)
+- [Options](/react-ipynb-renderer/options)
+- [Theme](/react-ipynb-renderer/theme)
+- [History](/react-ipynb-renderer/history)
+- [Code migration](/react-ipynb-renderer/migration)
 
