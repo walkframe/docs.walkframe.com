@@ -14,8 +14,8 @@ importers:
   .:
     dependencies:
       '@gridsheet/react-core':
-        specifier: 1.2.4-alpha.0
-        version: 1.2.4-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 1.2.4
+        version: 1.2.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@monaco-editor/react':
         specifier: ^4.6.0
         version: 4.6.0(monaco-editor@0.51.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -64,8 +64,8 @@ packages:
     resolution: {integrity: sha512-Nms86NXrsaeU9vbBJKni6gXiEXZ4CVpYVzEjDH9Sb8vmZ3UljyA1GSOJl/6LGPO8EHLuSF9H+IxNXHPX8QHJ4g==}
     engines: {node: '>=6.9.0'}
 
-  '@gridsheet/react-core@1.2.4-alpha.0':
-    resolution: {integrity: sha512-X+5ISnTAz8/6+z5Rkrktkx16n6Noj6u80Y3CgXKI6GnrdD3k6oTAzD0Fr3qEPrhZnQYCkN1nLWTEvex23imn9g==}
+  '@gridsheet/react-core@1.2.4':
+    resolution: {integrity: sha512-wmwR6zIYuuj+317lDqsfP6DnqgjXpAg3MZqbjfGeilZ2A+h5Z18iDrS/6h/9eiHo1NiumBCBBvHqdg3k4tUewQ==}
     peerDependencies:
       react: 18.2.0
       react-dom: '>=16.9.0'
@@ -1772,7 +1772,7 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
-  '@gridsheet/react-core@1.2.4-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@gridsheet/react-core@1.2.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       date-fns: 2.30.0
       date-fns-timezone: 0.1.4
